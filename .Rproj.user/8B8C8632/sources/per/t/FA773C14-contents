@@ -1,0 +1,46 @@
+---
+title: "practice at home"
+output: html_notebook
+---
+
+
+```{r}
+c(2L, 'a', 3.0, 4)
+class(2L)
+class(2)
+class("2")
+```
+
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+
+```
+
+```{r}
+x <- gl(2, 4, 8)
+levels(x)[1] <- "low"
+levels(x)[2] <- "high"
+x
+```
+
+```{r}
+y <- gl(2, 4, 8)
+levels(y) <- c("low", "high")
+y
+
+```
+
+```{r}
+x <- c("Man", "Male", "Man", "Lady", "Female")
+xf <- factor(x, levels = c("Male", "Man" , "Lady",   "Female"),
+                 labels = c("Male", "Male", "Female", "Female"))
+```
+
+```{r}
+z <- factor(LETTERS[3:1], ordered = TRUE)
+stopifnot(sort(z)[c(1,3)] == range(z), min(z) < max(z))
+```
+
+```{r}
+

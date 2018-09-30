@@ -1,0 +1,3 @@
+"0","x <- c(""Man"", ""Male"", ""Man"", ""Lady"", ""Female"")"
+"0","xf <- factor(x, levels = c(""Male"", ""Man"" , ""Lady"",   ""Female""),"
+"0","                 labels = c(""Male"", ""Male"", ""Female"", ""Female""))"
