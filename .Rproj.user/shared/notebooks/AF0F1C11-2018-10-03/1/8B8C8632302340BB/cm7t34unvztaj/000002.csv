@@ -1,0 +1,13 @@
+"0","library(lubridate)"
+"2","
+Attaching package: ．lubridate・
+
+"
+"2","The following object is masked from ．package:base・:
+
+    date
+
+"
+"0","a <- seq(ymd(""2001-01-01""),ymd(""2018-09-01""),by=""month"")"
+"0","b <- seq(ymd(""2001-01-01""),ymd(""2018-09-01""),by=""quarter"")"
+"0","c <- seq(ymd(""2001-01-01""),ymd(""2018-09-01""),by=""year"")"
