@@ -2,10 +2,10 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1538275233104.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1956454547",
     "id" : "FA773C14",
     "lastKnownWriteTime" : 1538286411,
     "last_content_update" : 1538286411778,
@@ -13,8 +13,8 @@
     "project_path" : "practice at home.Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
-        "cursorPosition" : "36,64",
-        "scrollLine" : "25",
+        "cursorPosition" : "31,3",
+        "scrollLine" : "18",
         "tempName" : "Untitled1"
     },
     "relative_order" : 2,

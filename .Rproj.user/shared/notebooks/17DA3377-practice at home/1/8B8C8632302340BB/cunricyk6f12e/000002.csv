@@ -1,0 +1,10 @@
+"0","library(readr)"
+"0","student <- read_csv(""https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv"")"
+"2","Parsed with column specification:
+cols(
+  入學年 = col_character(),
+  出生地 = col_character(),
+  性別 = col_character(),
+  身高 = col_double()
+)
+"
