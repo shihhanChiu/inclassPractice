@@ -18,8 +18,9 @@ student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-pr
 ```
 
 ```{r}
-x <- pi * c(-1:1, 10)
-as.integer(x)
+gender <- c("男性", "男性", "女性", "男性", "女性", "男性")
+gender <- factor(x = gender, levels=c("男性","女性"), labels=c("Male","Female"))
+gender
 ```
 
 ```{r}
@@ -30,7 +31,9 @@ TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-progra
 Year <- TyphoonData$年份
 Year <- as.integer(Year)
 Year <- Year - 1911
-Year
+Year <- as.character(Year)
+str_c("民國",Year,"年")
+class("民國")
 
 
 ```

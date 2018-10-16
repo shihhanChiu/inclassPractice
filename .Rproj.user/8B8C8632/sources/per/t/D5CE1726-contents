@@ -18,10 +18,21 @@ student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-pr
 ```
 
 ```{r}
-x <- gl(2, 4, 8)
-levels(x)[1] <- "low"
-levels(x)[2] <- "high"
-x
+x <- pi * c(-1:1, 10)
+as.integer(x)
+```
+
+```{r}
+library(readr)
+library(stringr)
+library(lubridate)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Year <- TyphoonData$年份
+Year <- as.integer(Year)
+Year <- Year - 1911
+Year
+
+
 ```
 
 ```{r}

@@ -206,31 +206,18 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmBgYCJ9 -->
-<pre class="r"><code>library(readr)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
-<pre><code>Warning message:
-In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
-  input string 1 is invalid in this locale</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudCA8LSByZWFkX2NzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvc3R1ZGVudC5jc3ZcIilcbmBgYCJ9 -->
-<pre class="r"><code>student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbnN0dWRlbnQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhL3N0dWRlbnQuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>library(readr)
+student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICCkSr7Hpn4gPSBjb2xfY2hhcmFjdGVyKCksXG4gIKVYpc2mYSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgqcqnTyA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgqK2wqiA9IGNvbF9kb3VibGUoKVxuKVxuIn0= -->
 <pre><code>Parsed with column specification:
 cols(
-  &lt;U+613C&gt;&lt;U+3E34&gt;J&lt;U+623C&gt;&lt;U+3E65&gt;&lt;U+01E6&gt;~ = col_character(),
-  &lt;U+613C&gt;&lt;U+3E35&gt;X&lt;U+613C&gt;&lt;U+3E35&gt;&lt;U+0366&gt;a = col_character(),
-  &lt;U+613C&gt;&lt;U+3E39&gt;&lt;U+02A7&gt;O = col_character(),
-  &lt;U+613C&gt;&lt;U+3E38&gt;&lt;U+613C&gt;&lt;U+3E64&gt;&lt;U+623C&gt;&lt;U+3E30&gt;&lt;U+613C&gt;&lt;U+3E61&gt; = col_double()
+  愼㸴J戼㹥Ǧ~ = col_character(),
+  愼㸵X愼㸵ͦa = col_character(),
+  愼㸹ʧO = col_character(),
+  愼㸸愼㹤戼㸰愼㹡 = col_double()
 )</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKHN0dWRlbnQk5Ye655Sf5ZywKVxuYGBgIn0= -->
-<pre class="r"><code>levels(student$出生地)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTlVMTFxuIn0= -->
-<pre><code>NULL</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -280,9 +267,17 @@ stopifnot(sort(z)[c(1,3)] == range(z), min(z) &lt; max(z))</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueiA8LSBmYWN0b3IoTEVUVEVSU1szOjFdLCBvcmRlcmVkID0gVFJVRSlcbnN0b3BpZm5vdChzb3J0KHopW2MoMSwzKV0gPT0gcmFuZ2UoeiksIG1pbih6KSA8IG1heCh6KSlcbmBgYCJ9 -->
+<pre class="r"><code>z &lt;- factor(LETTERS[3:1], ordered = TRUE)
+stopifnot(sort(z)[c(1,3)] == range(z), min(z) &lt; max(z))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogInByYWN0aWNlIGF0IGhvbWUiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCmBgYHtyfQ0KYygyTCwgJ2EnLCAzLjAsIDQpDQpjbGFzcygyTCkNCmNsYXNzKDIpDQpjbGFzcygiMiIpDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKQ0Kc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpDQoNCmBgYA0KDQpgYGB7cn0NCnggPC0gZ2woMiwgNCwgOCkNCmxldmVscyh4KVsxXSA8LSAibG93Ig0KbGV2ZWxzKHgpWzJdIDwtICJoaWdoIg0KeA0KYGBgDQoNCmBgYHtyfQ0KeSA8LSBnbCgyLCA0LCA4KQ0KbGV2ZWxzKHkpIDwtIGMoImxvdyIsICJoaWdoIikNCnkNCg0KYGBgDQoNCmBgYHtyfQ0KeCA8LSBjKCJNYW4iLCAiTWFsZSIsICJNYW4iLCAiTGFkeSIsICJGZW1hbGUiKQ0KeGYgPC0gZmFjdG9yKHgsIGxldmVscyA9IGMoIk1hbGUiLCAiTWFuIiAsICJMYWR5IiwgICAiRmVtYWxlIiksDQogICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoIk1hbGUiLCAiTWFsZSIsICJGZW1hbGUiLCAiRmVtYWxlIikpDQpgYGANCg0KYGBge3J9DQp6IDwtIGZhY3RvcihMRVRURVJTWzM6MV0sIG9yZGVyZWQgPSBUUlVFKQ0Kc3RvcGlmbm90KHNvcnQoeilbYygxLDMpXSA9PSByYW5nZSh6KSwgbWluKHopIDwgbWF4KHopKQ0KYGBgDQoNCmBgYHtyfQ0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogInByYWN0aWNlIGF0IGhvbWUiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCmBgYHtyfQ0KYygyTCwgJ2EnLCAzLjAsIDQpDQpjbGFzcygyTCkNCmNsYXNzKDIpDQpjbGFzcygiMiIpDQpgYGANCg0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKQ0Kc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpDQoNCmBgYA0KDQpgYGB7cn0NCnggPC0gcGkgKiBjKC0xOjEsIDEwKQ0KYXMuaW50ZWdlcih4KQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkoc3RyaW5ncikNCmxpYnJhcnkobHVicmlkYXRlKQ0KVHlwaG9vbkRhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HYXJ5TEtML2NvdXJzZS1wcm9ncmFtbWluZy1mb3ItZHMtUXVpei9tYXN0ZXIvVHlwaG9vbkRhdGEuY3N2IiwgY29sX3R5cGVzID0gY29scyguZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSkpDQpZZWFyIDwtIFR5cGhvb25EYXRhJOW5tOS7vQ0KWWVhciA8LSBhcy5pbnRlZ2VyKFllYXIpDQpZZWFyIDwtIFllYXIgLSAxOTExDQpZZWFyDQoNCg0KYGBgDQoNCmBgYHtyfQ0KeSA8LSBnbCgyLCA0LCA4KQ0KbGV2ZWxzKHkpIDwtIGMoImxvdyIsICJoaWdoIikNCnkNCg0KYGBgDQoNCmBgYHtyfQ0KeCA8LSBjKCJNYW4iLCAiTWFsZSIsICJNYW4iLCAiTGFkeSIsICJGZW1hbGUiKQ0KeGYgPC0gZmFjdG9yKHgsIGxldmVscyA9IGMoIk1hbGUiLCAiTWFuIiAsICJMYWR5IiwgICAiRmVtYWxlIiksDQogICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoIk1hbGUiLCAiTWFsZSIsICJGZW1hbGUiLCAiRmVtYWxlIikpDQpgYGANCg0KYGBge3J9DQp6IDwtIGZhY3RvcihMRVRURVJTWzM6MV0sIG9yZGVyZWQgPSBUUlVFKQ0Kc3RvcGlmbm90KHNvcnQoeilbYygxLDMpXSA9PSByYW5nZSh6KSwgbWluKHopIDwgbWF4KHopKQ0KYGBgDQoNCmBgYHtyfQ0KDQo=</div>
 
 
 
