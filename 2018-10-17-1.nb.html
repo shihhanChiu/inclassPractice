@@ -180,9 +180,123 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmBgYCJ9 -->
+<pre class="r"><code>library(readr)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlczpcbjE6IEluIGdyZXBsKFwifHx8XCIsIHdoYXQsIGZpeGVkID0gVFJVRSkgOlxuICBpbnB1dCBzdHJpbmcgMSBpcyBpbnZhbGlkIGluIHRoaXMgbG9jYWxlXG4yOiBJbiBzdHJzcGxpdChjb2RlLCBcIlxcblwiLCBmaXhlZCA9IFRSVUUpIDpcbiAgaW5wdXQgc3RyaW5nIDEgaXMgaW52YWxpZCBpbiB0aGlzIGxvY2FsZVxuIn0= -->
+<pre><code>Warning messages:
+1: In grepl(&quot;|||&quot;, what, fixed = TRUE) :
+  input string 1 is invalid in this locale
+2: In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhLyVFNyVBQyVBQyVFNCVCOCU4OSVFNSVCMSU4NiVFNyVCNiU5MyVFNiVCRiU5RiVFNiU5MiVBRCVFNSVBRSVBMiVFNyVBQiVCNiVFOCVCMyVCRCVFNSU4RiU4MyVFOCVCMyVCRCVFNCVCRCU5QyVFNSU5MyU4MSVFNiU4QSU5NSVFNyVBNSVBOCVFNyVCNSU5MCVFNiU5RSU5QyVFNiVBOCVBMyVFNiU5QyVBQyUyMC0lMjBTaGVldDEuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>filmVotingData &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/%E7%AC%AC%E4%B8%89%E5%B1%86%E7%B6%93%E6%BF%9F%E6%92%AD%E5%AE%A2%E7%AB%B6%E8%B3%BD%E5%8F%83%E8%B3%BD%E4%BD%9C%E5%93%81%E6%8A%95%E7%A5%A8%E7%B5%90%E6%9E%9C%E6%A8%A3%E6%9C%AC%20-%20Sheet1.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBUaW1lc3RhbXAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGClWKXNpuikuKZ+pOuk6aFdxefD0qW7pEilzqFeYCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgvdC/777cp0GzzLPfxXequrx2pPmkR7OhID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  Timestamp = col_character(),
+  `愼㸵X愼㸵ͦ褸愼㸶~愼㸴攼㹢愼㸴攼㸹愼㸱]挼㸵攼㸷挼㸳ҥ戼㹢愼㸴H愼㸵Ρ^` = col_character(),
+  戼㹤п攼㹦戼㹥ܧA戼㸳̳搼㹦挼㸵w愼㹡戼㹡戼㹣v愼㸴昼㸹愼㸴G戼㸳愼㸱 = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzdHJpbmdyKVxuYiA8LSBzdHJfYyhmaWxtVm90aW5nRGF0YSRg5Ye655Sf6KW/5YWD5bm05pyI5pel77yI6amX6K2J5pys5Lq655So77yJYClcbmIgPC0gc3RyX3N1YihmaWxtVm90aW5nRGF0YSRg5Ye655Sf6KW/5YWD5bm05pyI5pel77yI6amX6K2J5pys5Lq655So77yJYCwxLDQpXG5iXG5gYGAifQ== -->
+<pre class="r"><code>library(stringr)
+b &lt;- str_c(filmVotingData$`出生西元年月日（驗證本人用）`)
+b &lt;- str_sub(filmVotingData$`出生西元年月日（驗證本人用）`,1,4)
+b</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk4XCIgXCIxOTk4XCIgXCIxOTk1XCIgXCIxOTkxXCIgXCIxOTk4XCIgXCIxOTk2XCIgXCIxOTk0XCIgXCIxOTk3XCIgXCIxOTkzXCJcbiBbMTJdIFwiMTk5NlwiIFwiMTk5N1wiIFwiMTk5NlwiIFwiMTk5M1wiIFwiMTk5NlwiIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5NlwiIFwiMTk5NVwiIFwiMTk5NlwiIFwiMTk5NlwiXG4gWzIzXSBcIjE5OTZcIiBcIjE5OTZcIiBcIjE5OTZcIiBcIjE5OThcIiBcIjE5OTVcIiBcIjE5OTZcIiBcIjE5OTZcIiBcIjE5OTZcIiBcIjE5OTVcIiBcIjE5OTVcIiBcIjE5OTZcIlxuIFszNF0gXCIxOTk1XCIgXCIxOTk1XCIgXCIxOTk0XCIgXCIxOTk1XCIgXCIxOTk1XCIgXCIxOTk4XCIgXCIxOTk2XCIgXCIxOTk3XCIgXCIxOTkzXCIgXCJoMTI0XCIgXCIxOTk2XCJcbiBbNDVdIFwiMTk5NlwiIFwiMTk5OFwiIFwiMTk5NlwiIFwiMTk5N1wiIFwiMTk5NlwiIFwiMTk5OVwiIFwiMTk5NlwiIFwiMTk5OVwiIFwiMTk5OFwiIFwiMTk5NlwiIFwiMTk5N1wiXG4gWzU2XSBcIjE5OThcIiBcIjE5OTdcIiBcIjE5OThcIiBcIjE5OTFcIiBcIjE5OThcIiBcIjE5OTlcIiBcIjE5OTJcIiBcIjE5OTdcIiBcIjE5OTZcIiBcIjE5OThcIiBcIjE5OTRcIlxuIFs2N10gXCIxOTk0XCIgXCIxOTk3XCIgXCIxOTk3XCIgXCIxOTk5XCIgXCIxOTk3XCIgXCIxOTk3XCIgXCIxOTk5XCIgXCIxOTk2XCIgXCIxOTk1XCIgXCIxOTk2XCIgXCIxOTkyXCJcbiBbNzhdIFwiMTk5NlwiIFwiMTk5NlwiIFwiMTk5OFwiIFwiMTk5NlwiIFwiMTk5NVwiIFwiMTk5OVwiIFwiMTk5MFwiIFwiMTk5OFwiIFwiMTk5OFwiIFwiMTk5OVwiIFwiMTk5NlwiXG4gWzg5XSBcIjE5OTZcIiBcIjE5OTVcIiBcIjE5OTZcIiBcIjE5OThcIiBcIjE5OTVcIiBcIjE5OTdcIiBcIjE5OTdcIiBcIjE5OTZcIiBcIjE5OTdcIiBcIjE5OTVcIiBcIjE5OTRcIlxuWzEwMF0gXCIxOTk5XCIgXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk1XCIgXCIxOTk0XCIgXCIxOTk2XCIgXCIxOTk4XCIgXCIxOTk2XCIgXCIxOTk1XCIgXCIxOTk4XCIgXCIxOTk3XCJcblsxMTFdIFwiMTk5MlwiIFwiMTk5OFwiIFwiMTk5N1wiIFwiMTk5N1wiIFwiMTk5N1wiIFwiMTk5OFwiIFwiMTk5N1wiIFwiMTk5OFwiIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5OFwiXG5bMTIyXSBcIjE5OTdcIiBcIjE5OThcIiBcIjE5OTdcIiBcIjE5OTdcIiBcIjE5OTZcIiBcIjE5OTZcIiBcIjE5OTVcIiBcIjE5OTRcIiBcIjE5OTFcIiBcIjE5OTVcIiBcIjE5OThcIlxuWzEzM10gXCIxOTk3XCIgXCIxOTk1XCIgXCIxOTk1XCIgXCIxOTk4XCIgXCIxOTk5XCIgXCIxOTk1XCIgXCIxOTk4XCIgXCIxOTk4XCIgXCIxOTk5XCIgXCIxOTk2XCIgXCIxOTk3XCJcblsxNDRdIFwiMTk5NlwiIFwiMTk5N1wiIFwiMTk5NlwiIFwiMTk5N1wiIFwiMTk5N1wiIFwiMTk5N1wiIFwiMTk5N1wiIFwiMTk5NFwiIFwiMTk5NlwiIFwiMTk5NlwiIFwiMTk5NlwiXG5bMTU1XSBcIjE5OTZcIiBcIjE5OTZcIlxuIn0= -->
+<pre><code>  [1] &quot;1996&quot; &quot;1996&quot; &quot;1998&quot; &quot;1998&quot; &quot;1995&quot; &quot;1991&quot; &quot;1998&quot; &quot;1996&quot; &quot;1994&quot; &quot;1997&quot; &quot;1993&quot;
+ [12] &quot;1996&quot; &quot;1997&quot; &quot;1996&quot; &quot;1993&quot; &quot;1996&quot; &quot;1995&quot; &quot;1995&quot; &quot;1996&quot; &quot;1995&quot; &quot;1996&quot; &quot;1996&quot;
+ [23] &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1998&quot; &quot;1995&quot; &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1995&quot; &quot;1995&quot; &quot;1996&quot;
+ [34] &quot;1995&quot; &quot;1995&quot; &quot;1994&quot; &quot;1995&quot; &quot;1995&quot; &quot;1998&quot; &quot;1996&quot; &quot;1997&quot; &quot;1993&quot; &quot;h124&quot; &quot;1996&quot;
+ [45] &quot;1996&quot; &quot;1998&quot; &quot;1996&quot; &quot;1997&quot; &quot;1996&quot; &quot;1999&quot; &quot;1996&quot; &quot;1999&quot; &quot;1998&quot; &quot;1996&quot; &quot;1997&quot;
+ [56] &quot;1998&quot; &quot;1997&quot; &quot;1998&quot; &quot;1991&quot; &quot;1998&quot; &quot;1999&quot; &quot;1992&quot; &quot;1997&quot; &quot;1996&quot; &quot;1998&quot; &quot;1994&quot;
+ [67] &quot;1994&quot; &quot;1997&quot; &quot;1997&quot; &quot;1999&quot; &quot;1997&quot; &quot;1997&quot; &quot;1999&quot; &quot;1996&quot; &quot;1995&quot; &quot;1996&quot; &quot;1992&quot;
+ [78] &quot;1996&quot; &quot;1996&quot; &quot;1998&quot; &quot;1996&quot; &quot;1995&quot; &quot;1999&quot; &quot;1990&quot; &quot;1998&quot; &quot;1998&quot; &quot;1999&quot; &quot;1996&quot;
+ [89] &quot;1996&quot; &quot;1995&quot; &quot;1996&quot; &quot;1998&quot; &quot;1995&quot; &quot;1997&quot; &quot;1997&quot; &quot;1996&quot; &quot;1997&quot; &quot;1995&quot; &quot;1994&quot;
+[100] &quot;1999&quot; &quot;1996&quot; &quot;1996&quot; &quot;1995&quot; &quot;1994&quot; &quot;1996&quot; &quot;1998&quot; &quot;1996&quot; &quot;1995&quot; &quot;1998&quot; &quot;1997&quot;
+[111] &quot;1992&quot; &quot;1998&quot; &quot;1997&quot; &quot;1997&quot; &quot;1997&quot; &quot;1998&quot; &quot;1997&quot; &quot;1998&quot; &quot;1995&quot; &quot;1995&quot; &quot;1998&quot;
+[122] &quot;1997&quot; &quot;1998&quot; &quot;1997&quot; &quot;1997&quot; &quot;1996&quot; &quot;1996&quot; &quot;1995&quot; &quot;1994&quot; &quot;1991&quot; &quot;1995&quot; &quot;1998&quot;
+[133] &quot;1997&quot; &quot;1995&quot; &quot;1995&quot; &quot;1998&quot; &quot;1999&quot; &quot;1995&quot; &quot;1998&quot; &quot;1998&quot; &quot;1999&quot; &quot;1996&quot; &quot;1997&quot;
+[144] &quot;1996&quot; &quot;1997&quot; &quot;1996&quot; &quot;1997&quot; &quot;1997&quot; &quot;1997&quot; &quot;1997&quot; &quot;1994&quot; &quot;1996&quot; &quot;1996&quot; &quot;1996&quot;
+[155] &quot;1996&quot; &quot;1996&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWE8LXN0cl9zcGxpdF9maXhlZChmaWxtVm90aW5nRGF0YSToq4vpgbjmk4fkvaDmnIDllpzmraHnmoTlvbHniYfkuozpg6gsXCIsIFwiLDMpXG5gYGAifQ== -->
+<pre class="r"><code>aa&lt;-str_split_fixed(filmVotingData$請選擇你最喜歡的影片二部,&quot;, &quot;,3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmI8LXN0cl9jKGFhKVxudGFibGUoYmIpXG5gYGAifQ== -->
+<pre class="r"><code>bb&lt;-str_c(aa)
+table(bb)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYmJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTk3IFxuQXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgLSBNZWRpY2FsIGZpZWxkIOS6uuW3peaZuuaFp+iIh+mGq+eZgiBieSDmmbrmmbrpmoogXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDI0IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQmxvY2tjaGFpbuWNgOWhiumPiCBieSDlhazpmaLnoJToqI4yMDMgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIzIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnkgQW1vciBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTcgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRmluYW5jaWFsIENyaXNpcyBieSDmiJHopoHmi7/njY7ph5EgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM0IFxuICAgICAgICAgICAgIFdoYXQgd2UgbGVhcm4gZnJvbSBjbGF3IG1hY2hpbmUgYnkg6YaJ5b6M55qE5pyA5b6MY2hlZXJzIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA1MyBcbiAgICAgICAgICAgICAgICAgICAgICAgIOWIpeWGjei9ieWPsO+8geS6huino+mbu+imluW4guWgtOWVj+mhjOWwseW+nue2k+a/n+WtuOmWi+WniyBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMTcgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOmbu+WtkOaUr+S7mCBieSDlhajnkIPmmpbmqLogXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDU1IFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDnuK7ooag2NjbvvIE/IGJ5IOWxgeahg+aQnueskeiXneS6uiBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjUgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOe4ruihqOe2k+a/n+WtuCBieSDonLvonJPpmoogXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDIzIFxuIn0= -->
+<pre><code>bb
+                                                                 
+                                                             197 
+Artificial intelligence - Medical field 人工智慧與醫療 by 智智隊 
+                                                              24 
+                                 Blockchain區塊鏈 by 公院研討203 
+                                                              23 
+                                                         by Amor 
+                                                              17 
+                                  Financial Crisis by 我要拿獎金 
+                                                              34 
+             What we learn from claw machine by 醉後的最後cheers 
+                                                              53 
+                        別再轉台！了解電視市場問題就從經濟學開始 
+                                                              17 
+                                            電子支付 by 全球暖樺 
+                                                              55 
+                                      縮表666！? by 屁桃搞笑藝人 
+                                                              25 
+                                            縮表經濟學 by 蜻蜓隊 
+                                                              23 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnJ1aXRzIDwtIGMoXG4gIFwiYXBwbGVzIGFuZCBvcmFuZ2VzIGFuZCBwZWFycyBhbmQgYmFuYW5hc1wiLFxuICBcInBpbmVhcHBsZXMgYW5kIG1hbmdvcyBhbmQgZ3VhdmFzXCIpXG5zdHJfc3BsaXRfZml4ZWQoZnJ1aXRzLCBcIiBhbmQgXCIsIDIpXG5gYGAifQ== -->
+<pre class="r"><code>fruits &lt;- c(
+  &quot;apples and oranges and pears and bananas&quot;,
+  &quot;pineapples and mangos and guavas&quot;)
+str_split_fixed(fruits, &quot; and &quot;, 2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdICAgICAgICAgWywyXSAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuWzEsXSBcImFwcGxlc1wiICAgICBcIm9yYW5nZXMgYW5kIHBlYXJzIGFuZCBiYW5hbmFzXCJcblsyLF0gXCJwaW5lYXBwbGVzXCIgXCJtYW5nb3MgYW5kIGd1YXZhc1wiICAgICAgICAgICAgXG4ifQ== -->
+<pre><code>     [,1]         [,2]                           
+[1,] &quot;apples&quot;     &quot;oranges and pears and bananas&quot;
+[2,] &quot;pineapples&quot; &quot;mangos and guavas&quot;            </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtYyhcIkEsIEJcIixcIkIsIENcIilcbmFcbmBgYCJ9 -->
+<pre class="r"><code>a&lt;-c(&quot;A, B&quot;,&quot;B, C&quot;)
+a</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQSwgQlwiIFwiQiwgQ1wiXG4ifQ== -->
+<pre><code>[1] &quot;A, B&quot; &quot;B, C&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyX3NwbGl0X2ZpeGVkKGEsXCIsIFwiLCBuPTMpLT5iXG5zdHJfYyhiKS0+Y1xuY1xuYGBgIn0= -->
+<pre class="r"><code>str_split_fixed(a,&quot;, &quot;, n=3)-&gt;b
+str_c(b)-&gt;c
+c</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQVwiIFwiQlwiIFwiQlwiIFwiQ1wiIFwiXCIgIFwiXCIgXG4ifQ== -->
+<pre><code>[1] &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;&quot;  &quot;&quot; </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
@@ -190,7 +304,7 @@ $(document).ready(function () {
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMTciDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMTciDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpsaWJyYXJ5KHJlYWRyKQ0KZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvJUU3JUFDJUFDJUU0JUI4JTg5JUU1JUIxJTg2JUU3JUI2JTkzJUU2JUJGJTlGJUU2JTkyJUFEJUU1JUFFJUEyJUU3JUFCJUI2JUU4JUIzJUJEJUU1JThGJTgzJUU4JUIzJUJEJUU0JUJEJTlDJUU1JTkzJTgxJUU2JThBJTk1JUU3JUE1JUE4JUU3JUI1JTkwJUU2JTlFJTlDJUU2JUE4JUEzJUU2JTlDJUFDJTIwLSUyMFNoZWV0MS5jc3YiKQ0KbGlicmFyeShzdHJpbmdyKQ0KYiA8LSBzdHJfYyhmaWxtVm90aW5nRGF0YSRg5Ye655Sf6KW/5YWD5bm05pyI5pel77yI6amX6K2J5pys5Lq655So77yJYCkNCmIgPC0gc3RyX3N1YihmaWxtVm90aW5nRGF0YSRg5Ye655Sf6KW/5YWD5bm05pyI5pel77yI6amX6K2J5pys5Lq655So77yJYCwxLDQpDQpiDQoNCmBgYA0KDQpgYGB7cn0NCmFhPC1zdHJfc3BsaXRfZml4ZWQoZmlsbVZvdGluZ0RhdGEk6KuL6YG45pOH5L2g5pyA5Zac5q2h55qE5b2x54mH5LqM6YOoLCIsICIsMykNCmJiPC1zdHJfYyhhYSkNCnRhYmxlKGJiKQ0KYGBgDQoNCmBgYHtyfQ0KZnJ1aXRzIDwtIGMoDQogICJhcHBsZXMgYW5kIG9yYW5nZXMgYW5kIHBlYXJzIGFuZCBiYW5hbmFzIiwNCiAgInBpbmVhcHBsZXMgYW5kIG1hbmdvcyBhbmQgZ3VhdmFzIikNCnN0cl9zcGxpdF9maXhlZChmcnVpdHMsICIgYW5kICIsIDIpDQpgYGANCg0KYGBge3J9DQphPC1jKCJBLCBCIiwiQiwgQyIpDQphDQpzdHJfc3BsaXRfZml4ZWQoYSwiLCAiLCBuPTMpLT5iDQpzdHJfYyhiKS0+Yw0KYw0KDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
 
 
 
