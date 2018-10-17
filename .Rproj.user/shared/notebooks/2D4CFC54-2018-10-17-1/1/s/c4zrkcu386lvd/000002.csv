@@ -1,0 +1,10 @@
+"0","```r
+fruits <- c(
+  \"apples and oranges and pears and bananas\",
+  \"pineapples and mangos and guavas\")
+str_split_fixed(fruits, \" and \", 2)
+```"
+"1","     [,1]         [,2]                           
+[1,] \"apples\"     \"oranges and pears and bananas\"
+[2,] \"pineapples\" \"mangos and guavas\"            
+"

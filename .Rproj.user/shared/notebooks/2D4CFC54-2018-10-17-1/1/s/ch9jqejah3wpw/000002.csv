@@ -1,0 +1,33 @@
+"0","```r
+aa<-str_split_fixed(filmVotingData$隢<e6><93><bd><9c><e5><96>迭<e7><9a>蔣<e7><89><ba>,\", \",3)
+```"
+"1","Warning message:
+In strsplit(code, \"\n\", fixed = TRUE) :
+  input string 1 is invalid in this locale
+"
+"0","```r
+bb<-str_c(aa)
+table(bb)
+```"
+"1","bb
+                                                                 
+                                                             197 
+Artificial intelligence - Medical field 鈭箏極<e6><e6><e8><88><e7><99><82> by <e6><e6><e9><9a><8a> 
+                                                              24 
+                                 Blockchain<e5><8d>憛<8f><88> by <e5><e9><e7><a0><a8><8e>203 
+                                                              23 
+                                                         by Amor 
+                                                              17 
+                                  Financial Crisis by <e6><88><a6><e7><8d><87><91> 
+                                                              34 
+             What we learn from claw machine by <e9><86><be><9a><9c>敺heers 
+                                                              53 
+                        <e5><e5><86><bd>嚗<ba>圾<e9>閬<b8><e5><95><a1>停敺<b6><bf>飛<e9><96><a7><8b> 
+                                                              17 
+                                            <e9>摮隞<98> by <e5><e7><90><9a>那 
+                                                              55 
+                                      蝮株”666嚗<81>? by 撅<a1><90><ac><97>犖 
+                                                              25 
+                                            蝮株”蝬<bf>飛 by <e8><e8><9c><9a><8a> 
+                                                              23 
+"
