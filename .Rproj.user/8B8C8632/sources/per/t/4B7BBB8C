@@ -5,14 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1902773131",
     "id" : "4B7BBB8C",
-    "lastKnownWriteTime" : 1539762222,
-    "last_content_update" : 1539762222,
+    "lastKnownWriteTime" : 1539766402,
+    "last_content_update" : 1539766402142,
     "path" : "C:/inclassPractice/2018-10-17-1.Rmd",
     "project_path" : "2018-10-17-1.Rmd",
     "properties" : {
-        "chunk_output_type" : "inline"
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "35,0",
+        "scrollLine" : "32"
     },
     "relative_order" : 8,
     "source_on_save" : false,
