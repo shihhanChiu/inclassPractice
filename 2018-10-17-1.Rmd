@@ -20,8 +20,7 @@ b
 ```{r}
 library(stringr)
 aa<-str_split_fixed(filmVotingData$請選擇你最喜歡的影片二部,", ",3)
-bb<-str_c(aa)
-table(bb)
+aa <- str_c()
 ```
 
 ```{r}
