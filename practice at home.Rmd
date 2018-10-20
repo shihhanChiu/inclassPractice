@@ -5,10 +5,9 @@ output: html_notebook
 
 
 ```{r}
-c(2L, 'a', 3.0, 4)
-class(2L)
-class(2)
-class("2")
+fruits <- c("one apple", "two pears", "three bananas")
+str_replace(fruits, "[aeiou]", "-")
+str_replace_all(fruits, "[aeiou]", "-")
 ```
 
 ```{r}
