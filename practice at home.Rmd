@@ -11,8 +11,8 @@ str_replace_all(fruits, "[aeiou]", "-")
 ```
 
 ```{r}
-library(readr)
-student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+x <- c(0:5, 11)
+xm <- mean(x)
 
 ```
 
