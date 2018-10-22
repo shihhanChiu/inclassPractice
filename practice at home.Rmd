@@ -10,15 +10,16 @@ str_replace(fruits, "[aeiou]", "-")
 str_replace_all(fruits, "[aeiou]", "-")
 ```
 
-```{r}
-x <- c(0:5, 11)
-xm <- mean(x)
-
-```
 
 ```{r}
-gender <- factor(x = gender, levels=c("男性","女性"), labels=c("Male","Female"))
-gender
+stringr::str_c("0",bankdata$年月,'/01')->民國年月日 
+library(lubridate) 
+ymd(民國年月日)->民國年月日1 
+stringr::str_c(民國年月日1 + years(1911))->西元年月日 
+as.factor(西元年月日)->西元年月日 
+stringr::str_replace(西元年月日,"-01","")->西元年月 
+西元年月
+class(西元年月)
 ```
 
 ```{r}
