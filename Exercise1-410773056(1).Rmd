@@ -40,6 +40,8 @@ ymd(西元年月日) -> 西元年月日
 
 
 
+
+
 ## 2
 Google天災地圖會發佈天災時地資訊，如[潭美颱風(Typhoon Trami)](https://google.org/crisismap/google.com/2018-trami)，但它的時間是以UTC表示，如"2018/30/09 00:00 UTC",試透過`lubridate::with_tz()`將"2018/30/09 00:00 UTC"轉成台灣時間。(Hint: 台灣tzone可用`grep("Taipei",OlsonNames(),value=TRUE)`指令查得)
 
@@ -49,5 +51,7 @@ x <- ydm_hm("2018/30/09 00:00", tz = "UTC")
 with_tz(x, tz = "Asia/Taipei") -> x
 x
 ```
+
+
 
 
