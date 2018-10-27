@@ -2,6 +2,23 @@
 title: "practice at home"
 output: html_notebook
 ---
+```{r}
+library(readr)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv")
+```
+
+```{r}
+as.factor(TyphoonData$近臺強度) -> a
+as.numeric(TyphoonData$`最低氣壓(hPa)`) -> b
+as.numeric(TyphoonData$`最大風速(m/s)`) -> c
+as.numeric(TyphoonData$`7級風暴風半徑(km)`) -> d
+as.numeric(TyphoonData$`10級風暴風半徑(km)`) -> e
+a
+b
+c
+d
+e
+```
 
 
 ```{r}
