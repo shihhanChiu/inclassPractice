@@ -45,7 +45,7 @@ filmVotingData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-1
 2.1 將`filmVotingData$Timestamp`透過`lubridate::mdy_hms()`轉成POSIXct Date/Time class。
 
 ```{r ans21}
-head(filmVotingData$Timestamp,n=108) -> a
+head(filmVotingData$Timestamp,n=156) -> a
 as.factor(a) -> a
 lubridate::mdy_hms(a) -> a
 class(a)
@@ -63,8 +63,8 @@ a
 
 ```{r ans23}
 lubridate::hour(a) -> a
-as.factor(a) -> `filmVotingData$hour`
-`filmVotingData$hour`
+as.factor(a) -> filmVotingData$hour
+filmVotingData$hour
 
 
 ```
@@ -73,7 +73,6 @@ as.factor(a) -> `filmVotingData$hour`
 
 ```{r ans24}
 table(`filmVotingData$hour`) -> b
-max(b) -> b
 b
 ```
 
