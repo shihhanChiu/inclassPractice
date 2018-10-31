@@ -1,0 +1,102 @@
+---
+title: "2018-10-31"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+names(StuDF)[2] <- c("姓名")
+names(StuDF)
+```
+
+```{r}
+names(gsSurvey)
+```
+
+```{r}
+gsSurvey$links$type[1]
+```
+
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+library(dplyr)
+library(magrittr)
+student %<>% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185)))
+```
+
+```{r}
+levels(student$身高級距)
+
+```
+
+```{r}
+student$新身高級距 <- student$身高級距
+levels(student$新身高級距)[c(1:3)]<-c("(0,160]")
+levels(student$新身高級距)                                                                 
+```
+
+```{r}
+dim(classSurvey)
+nrow(classSurvey)
+ncol(classSurvey)
+```
+
+```{r}
+class(classSurvey$學號)
+as.character(classSurvey$學號) ->classSurvey$學號 
+library(stringr)
+classSurvey$年級 <- str_sub(classSurvey$學號,2,4)
+classSurvey$年級 <- as.factor(classSurvey$年級)
+levels(classSurvey$年級) <- c("大四以上","大三","大二","大一")
+classSurvey$年級
+```
+
+```{r}
+classSurvey[(classSurvey$年級 == "大一"),8]
+
+```
+
+```{r}
+freshIndicator <- (classSurvey$年級=="大一")
+freshActivity <- classSurvey$本學期目前已參加之課外活動[freshIndicator]
+library(stringr)
+str_split_fixed(freshActivity,", ",n=3) -> aa
+table(aa)
+length(freshActivity)
+```
+
+```{r}
+freshIndicator
+```
+
+```{r}
+freshActivity
+```
+
+```{r}
+aa
+```
+
+```{r}
+bb
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
