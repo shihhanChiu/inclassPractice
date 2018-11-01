@@ -22,7 +22,6 @@ classData<-gs_read(gsLMSHabit,ws="公告與練習") #access the 1st worksheet
 as.factor(classData$`公-10-06`) -> a
 levels(a)<-c("沒看公告","有看公告")
 a
-table(a)
 ```
 
 ### 1.2 
@@ -40,26 +39,32 @@ Sample
 在「有看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans13}
-as.factor(classData$`練2018-10-17-1`) -> b
-levels(b)<-c("沒有記錄","有記錄")
-classData$記錄 <- b
-Record <- (classData$記錄 == "有記錄")
-Both <- Viewed[Record]
-Both
-table(Both)
-
+as.factor(classData$`練2018-10-17-1`) -> classData$`練2018-10-17-1`
+b <- (classData$`練2018-10-17-1` == 1)
+c <- b[Viewed]
+as.factor(as.numeric(c)) -> c
+levels(c) <- c("有看公告沒記錄","有看公告有記錄")
+table(c)
+41/52 -> ratio
+round(ratio,2) -> ratio
+ratio
 ```
 
 ### 1.4
 在「沒看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans14}
+as.factor(classData$`練2018-10-17-1`) -> classData$`練2018-10-17-1`
+d <- (classData$`練2018-10-17-1` == 0)
 nonViewed <- (a == "沒看公告")
-sample1 <- [nonViewed]
-Record <- [classData$記錄 == "有記錄"]
-
-
+e <- d[nonViewed]
+as.factor(as.numeric(e)) -> e
+levels(e) <- c("沒看公告沒記錄","沒看公告有記錄")
+table(e)
+16/25 -> ratio1
+ratio1
 ```
+
 
 ## 2 作業繳交時間
 
