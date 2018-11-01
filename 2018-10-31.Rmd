@@ -35,11 +35,13 @@ student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-pr
 library(dplyr)
 library(magrittr)
 student %<>% mutate(
-  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185)))
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))
 ```
 
 ```{r}
+levels(student$身高級距) <-c("小個子","小個子","小個子","小個子","小個子","中等個子","中等個子","高個子","高個子")
 levels(student$身高級距)
+student$身高級距
 
 ```
 
@@ -63,6 +65,10 @@ classSurvey$年級 <- str_sub(classSurvey$學號,2,4)
 classSurvey$年級 <- as.factor(classSurvey$年級)
 levels(classSurvey$年級) <- c("大四以上","大三","大二","大一")
 classSurvey$年級
+```
+
+```{r}
+ 
 ```
 
 ```{r}

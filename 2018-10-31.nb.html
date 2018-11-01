@@ -180,9 +180,316 @@ $(document).ready(function () {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYgPC0gZGF0YS5mcmFtZShcbiAgU3R1SUQ9YygxLDIsMyw0LDUpLFxuICBuYW1lPWMoXCLlsI/mmI5cIixcIuWkp+mbhFwiLFwi6IOW6JmOXCIsXCLlsI/mlrBcIixcIuWkp+eZvVwiKSxcbiAgc2NvcmU9Yyg4MCw2MCw5MCw3MCw1MClcbiAgKVxuYGBgIn0= -->
+<pre class="r"><code>StuDF &lt;- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c(&quot;小明&quot;,&quot;大雄&quot;,&quot;胖虎&quot;,&quot;小新&quot;,&quot;大白&quot;),
+  score=c(80,60,90,70,50)
+  )</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYgXG5gYGAifQ== -->
+<pre class="r"><code>StuDF </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6NX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJsMlFTMDdETUJDR3A3WURORktyU3VVY1dmUUNkSkZOTjBnOGhMcTFnb3RTR1R0eXpHUEpZV0FCRW1JSEorRVNyRml6S05qSlRFdGlLZm4vakNmZlBFN3o1U3hkcGdEQWdDY0RZRHhZd2NKckFBS0dVZThCK0RTWWVETU9UM0wwRGMyWkErb0I2Z1QxRUMrQWoySSsvc3ZRaXdiZUxiS24xYTNTZFhBVHpJcFI4YmgrK3R6NTk3ZXRyNTUvZHY2akp2K2F2M3oxeUVtaFpVM2diYm1WTEx4MXdXMW9xUGs1Tm4rTWV2SFE2Z25xZ29icTRvMjhWb1RuRkR6ek40c2NQMFRNb0l1NnNFNzFFRU5uN3pMQ3hJV3h0bUpjUTB6a3Y3M3UwMHZwWmJaeWtkdE0wTUh0MjhxWDFnUVltK0syNDVCcHUvWG1qTkFuL3p4dk1ZS0tDVnFWTWxlbG9RSEdvZGVtMWF4eXBmSFVVSWpXbWJkZWFvb1VWbE9rcmIvNUEyc1B4ZmxxQWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80"},{"1":"2","2":"大雄","3":"60"},{"1":"3","2":"胖虎","3":"90"},{"1":"4","2":"小新","3":"70"},{"1":"5","2":"大白","3":"50"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1REYpWzJdIDwtIGMoXCLlp5PlkI1cIilcbmBgYCJ9 -->
+<pre class="r"><code>names(StuDF)[2] &lt;- c(&quot;姓名&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1REYpXG5gYGAifQ== -->
+<pre class="r"><code>names(StuDF)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiU3R1SURcIiBcIuWnk+WQjVwiICBcInNjb3JlXCJcbiJ9 -->
+<pre><code>[1] &quot;StuID&quot; &quot;姓名&quot;  &quot;score&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoZ3NTdXJ2ZXkpXG5gYGAifQ== -->
+<pre class="r"><code>names(gsSurvey)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAnZ3NTdXJ2ZXknIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error: object 'gsSurvey' not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3NTdXJ2ZXkkbGlua3MkdHlwZVsxXVxuYGBgIn0= -->
+<pre class="r"><code>gsSurvey$links$type[1]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYXBwbGljYXRpb24vYXRvbSt4bWxcIlxuIn0= -->
+<pre><code>[1] &quot;application/atom+xml&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmBgYCJ9 -->
+<pre class="r"><code>library(readr)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudCA8LSByZWFkX2NzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvc3R1ZGVudC5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICCkSr7Hpn4gPSBjb2xfY2hhcmFjdGVyKCksXG4gIKVYpc2mYSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgqcqnTyA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgqK2wqiA9IGNvbF9kb3VibGUoKVxuKVxuIn0= -->
+<pre><code>Parsed with column specification:
+cols(
+  愼㸴J戼㹥Ǧ~ = col_character(),
+  愼㸵X愼㸵ͦa = col_character(),
+  愼㸹ʧO = col_character(),
+  愼㸸愼㹤戼㸰愼㹡 = col_double()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkobWFncml0dHIpXG5zdHVkZW50ICU8PiUgbXV0YXRlKFxuICDouqvpq5jntJrot509Y3V0KOi6q+mrmCxjKDAsMTUwLDE1NSwxNjAsMTY1LDE3MCwxNzUsMTgwLDE4NSwyMDApKSlcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)
+library(magrittr)
+student %&lt;&gt;% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKHN0dWRlbnQk6Lqr6auY57Sa6LedKSA8LWMoXCLlsI/lgIvlrZBcIixcIuWwj+WAi+WtkFwiLFwi5bCP5YCL5a2QXCIsXCLlsI/lgIvlrZBcIixcIuWwj+WAi+WtkFwiLFwi5Lit562J5YCL5a2QXCIsXCLkuK3nrYnlgIvlrZBcIixcIumrmOWAi+WtkFwiLFwi6auY5YCL5a2QXCIpXG5gYGAifQ== -->
+<pre class="r"><code>levels(student$身高級距) &lt;-c(&quot;小個子&quot;,&quot;小個子&quot;,&quot;小個子&quot;,&quot;小個子&quot;,&quot;小個子&quot;,&quot;中等個子&quot;,&quot;中等個子&quot;,&quot;高個子&quot;,&quot;高個子&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKHN0dWRlbnQk6Lqr6auY57Sa6LedKVxuYGBgIn0= -->
+<pre class="r"><code>levels(student$身高級距)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwi5bCP5YCL5a2QXCIgICBcIuS4reetieWAi+WtkFwiIFwi6auY5YCL5a2QXCIgIFxuIn0= -->
+<pre><code>[1] &quot;小個子&quot;   &quot;中等個子&quot; &quot;高個子&quot;  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudCTouqvpq5jntJrot51cbmBgYCJ9 -->
+<pre class="r"><code>student$身高級距</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgWzFdIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gICBbOV0g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gIFsxN10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiAgWzI1XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiAgWzMzXSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiAgWzQxXSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gIFs0OV0g5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gIFs1N10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gIFs2NV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuICBbNzNdIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gIFs4MV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gIFs4OV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gIFs5N10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFsxMDVdIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMTEzXSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzEyMV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZBcbiBbMTI5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFsxMzddIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMTQ1XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzE1M10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzE2MV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMTY5XSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzE3N10g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFsxODVdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzE5M10g5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFsyMDFdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbMjA5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMjE3XSDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzIyNV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFsyMzNdIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMjQxXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMjQ5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZBcbiBbMjU3XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg6auY5YCL5a2QICBcbiBbMjY1XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzI3M10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDpq5jlgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzI4MV0g5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg6auY5YCL5a2QICBcbiBbMjg5XSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzI5N10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMzA1XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzMxM10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMzIxXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzMyOV0g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbMzM3XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzM0NV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMzUzXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDpq5jlgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzM2MV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICBcbiBbMzY5XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbMzc3XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbMzg1XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg6auY5YCL5a2QICBcbiBbMzkzXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzQwMV0g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbNDA5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzQxN10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs0MjVdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkFxuIFs0MzNdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZBcbiBbNDQxXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzQ0OV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbNDU3XSDlsI/lgIvlrZAgICDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFs0NjVdIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzQ3M10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzQ4MV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkFxuIFs0ODldIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbNDk3XSDpq5jlgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFs1MDVdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1MTNdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1MjFdIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbNTI5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1MzddIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1NDVdIOS4reetieWAi+WtkCDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzU1M10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1NjFdIOS4reetieWAi+WtkCDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbNTY5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1NzddIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs1ODVdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbNTkzXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzYwMV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkFxuIFs2MDldIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkFxuIFs2MTddIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzYyNV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZBcbiBbNjMzXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs2NDFdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkFxuIFs2NDldIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFs2NTddIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzY2NV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbNjczXSDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDpq5jlgIvlrZAgICDkuK3nrYnlgIvlrZBcbiBbNjgxXSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg6auY5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbNjg5XSDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzY5N10g6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzcwNV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzcxM10g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzcyMV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgXG4gWzcyOV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg6auY5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzczN10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFs3NDVdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgXG4gWzc1M10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs3NjFdIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbNzY5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs3NzddIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbNzg1XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFs3OTNdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDpq5jlgIvlrZAgIFxuIFs4MDFdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZBcbiBbODA5XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgXG4gWzgxN10g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzgyNV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbODMzXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbODQxXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzg0OV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzg1N10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkFxuIFs4NjVdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICBcbiBbODczXSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs4ODFdIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzg4OV0g6auY5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QXG4gWzg5N10g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDpq5jlgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs5MDVdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs5MTNdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs5MjFdIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs5MjldIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbOTM3XSDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDpq5jlgIvlrZAgIFxuIFs5NDVdIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgXG4gWzk1M10g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOmrmOWAi+WtkCAgIOmrmOWAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgICDlsI/lgIvlrZAgICDlsI/lgIvlrZAgIFxuIFs5NjFdIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzk2OV0g5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICBcbiBbOTc3XSDkuK3nrYnlgIvlrZAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOmrmOWAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgIOWwj+WAi+WtkCAgXG4gWzk4NV0g5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5bCP5YCL5a2QICAg5Lit562J5YCL5a2QXG4gWzk5M10g5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDkuK3nrYnlgIvlrZAg5Lit562J5YCL5a2QIOWwj+WAi+WtkCAgIOS4reetieWAi+WtkCDlsI/lgIvlrZAgIFxuIFsgcmVhY2hlZCBnZXRPcHRpb24oXCJtYXgucHJpbnRcIikgLS0gb21pdHRlZCA1NyBlbnRyaWVzIF1cbkxldmVsczog5bCP5YCL5a2QIOS4reetieWAi+WtkCDpq5jlgIvlrZBcbiJ9 -->
+<pre><code>   [1] 小個子   中等個子 小個子   中等個子 小個子   小個子   小個子   中等個子
+   [9] 中等個子 小個子   小個子   高個子   中等個子 中等個子 中等個子 小個子  
+  [17] 小個子   中等個子 中等個子 小個子   中等個子 小個子   小個子   小個子  
+  [25] 小個子   小個子   小個子   中等個子 小個子   小個子   小個子   小個子  
+  [33] 小個子   中等個子 小個子   中等個子 小個子   中等個子 中等個子 小個子  
+  [41] 小個子   中等個子 中等個子 小個子   小個子   小個子   小個子   小個子  
+  [49] 中等個子 中等個子 中等個子 小個子   中等個子 小個子   小個子   小個子  
+  [57] 小個子   小個子   小個子   中等個子 小個子   小個子   小個子   小個子  
+  [65] 小個子   中等個子 小個子   小個子   小個子   中等個子 小個子   小個子  
+  [73] 高個子   中等個子 中等個子 小個子   小個子   小個子   小個子   中等個子
+  [81] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+  [89] 小個子   小個子   小個子   小個子   小個子   中等個子 小個子   小個子  
+  [97] 小個子   中等個子 小個子   小個子   中等個子 小個子   小個子   小個子  
+ [105] 高個子   小個子   中等個子 中等個子 高個子   小個子   小個子   小個子  
+ [113] 小個子   中等個子 中等個子 中等個子 小個子   小個子   中等個子 中等個子
+ [121] 小個子   小個子   小個子   中等個子 小個子   中等個子 小個子   中等個子
+ [129] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [137] 小個子   中等個子 小個子   小個子   中等個子 小個子   小個子   小個子  
+ [145] 中等個子 小個子   小個子   中等個子 小個子   小個子   高個子   小個子  
+ [153] 小個子   小個子   小個子   小個子   小個子   小個子   中等個子 小個子  
+ [161] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [169] 小個子   中等個子 小個子   中等個子 小個子   小個子   高個子   小個子  
+ [177] 中等個子 小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+ [185] 中等個子 小個子   小個子   小個子   中等個子 小個子   小個子   中等個子
+ [193] 中等個子 高個子   中等個子 小個子   小個子   小個子   小個子   小個子  
+ [201] 中等個子 小個子   小個子   小個子   小個子   小個子   中等個子 小個子  
+ [209] 小個子   小個子   中等個子 小個子   小個子   高個子   小個子   小個子  
+ [217] 高個子   小個子   中等個子 中等個子 小個子   小個子   小個子   小個子  
+ [225] 小個子   中等個子 中等個子 小個子   小個子   小個子   小個子   小個子  
+ [233] 小個子   中等個子 小個子   小個子   中等個子 小個子   小個子   小個子  
+ [241] 小個子   小個子   中等個子 高個子   小個子   小個子   小個子   小個子  
+ [249] 小個子   小個子   中等個子 小個子   小個子   中等個子 中等個子 中等個子
+ [257] 小個子   小個子   中等個子 小個子   小個子   小個子   小個子   高個子  
+ [265] 中等個子 小個子   小個子   小個子   小個子   中等個子 小個子   小個子  
+ [273] 小個子   小個子   小個子   中等個子 中等個子 高個子   中等個子 中等個子
+ [281] 中等個子 高個子   中等個子 小個子   小個子   中等個子 小個子   高個子  
+ [289] 小個子   中等個子 小個子   小個子   小個子   中等個子 小個子   小個子  
+ [297] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [305] 中等個子 小個子   小個子   小個子   小個子   小個子   中等個子 小個子  
+ [313] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [321] 小個子   小個子   小個子   小個子   小個子   小個子   中等個子 中等個子
+ [329] 中等個子 小個子   小個子   中等個子 小個子   小個子   中等個子 小個子  
+ [337] 中等個子 小個子   中等個子 中等個子 小個子   小個子   中等個子 中等個子
+ [345] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [353] 小個子   小個子   小個子   小個子   小個子   高個子   中等個子 中等個子
+ [361] 小個子   小個子   小個子   小個子   中等個子 中等個子 中等個子 高個子  
+ [369] 中等個子 小個子   小個子   中等個子 中等個子 小個子   中等個子 小個子  
+ [377] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+ [385] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   高個子  
+ [393] 小個子   小個子   小個子   小個子   小個子   中等個子 中等個子 小個子  
+ [401] 中等個子 小個子   高個子   高個子   小個子   中等個子 中等個子 小個子  
+ [409] 小個子   小個子   中等個子 高個子   中等個子 中等個子 中等個子 中等個子
+ [417] 小個子   中等個子 小個子   高個子   中等個子 小個子   小個子   小個子  
+ [425] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   中等個子
+ [433] 中等個子 小個子   小個子   小個子   高個子   小個子   小個子   中等個子
+ [441] 小個子   小個子   小個子   小個子   中等個子 小個子   中等個子 小個子  
+ [449] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [457] 小個子   高個子   小個子   中等個子 小個子   中等個子 中等個子 小個子  
+ [465] 小個子   中等個子 中等個子 中等個子 小個子   小個子   小個子   小個子  
+ [473] 小個子   小個子   小個子   中等個子 小個子   小個子   小個子   小個子  
+ [481] 小個子   小個子   小個子   小個子   小個子   中等個子 小個子   中等個子
+ [489] 中等個子 中等個子 小個子   中等個子 中等個子 中等個子 高個子   小個子  
+ [497] 高個子   中等個子 小個子   中等個子 小個子   小個子   中等個子 小個子  
+ [505] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+ [513] 小個子   小個子   小個子   小個子   小個子   中等個子 小個子   小個子  
+ [521] 小個子   中等個子 小個子   中等個子 小個子   小個子   小個子   小個子  
+ [529] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [537] 小個子   小個子   中等個子 小個子   小個子   小個子   小個子   小個子  
+ [545] 中等個子 高個子   小個子   小個子   小個子   中等個子 中等個子 小個子  
+ [553] 小個子   小個子   中等個子 小個子   中等個子 小個子   小個子   小個子  
+ [561] 中等個子 高個子   小個子   小個子   高個子   小個子   中等個子 小個子  
+ [569] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [577] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+ [585] 小個子   小個子   小個子   中等個子 中等個子 小個子   小個子   小個子  
+ [593] 小個子   小個子   小個子   小個子   中等個子 中等個子 小個子   小個子  
+ [601] 小個子   中等個子 小個子   小個子   小個子   高個子   高個子   中等個子
+ [609] 中等個子 小個子   中等個子 高個子   小個子   中等個子 小個子   中等個子
+ [617] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [625] 小個子   中等個子 小個子   小個子   小個子   中等個子 小個子   中等個子
+ [633] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [641] 中等個子 小個子   中等個子 小個子   小個子   小個子   中等個子 中等個子
+ [649] 小個子   小個子   小個子   小個子   小個子   小個子   中等個子 小個子  
+ [657] 小個子   中等個子 小個子   小個子   小個子   中等個子 小個子   中等個子
+ [665] 小個子   中等個子 高個子   中等個子 小個子   小個子   中等個子 小個子  
+ [673] 中等個子 中等個子 小個子   小個子   小個子   中等個子 高個子   中等個子
+ [681] 小個子   中等個子 中等個子 中等個子 小個子   中等個子 高個子   小個子  
+ [689] 小個子   中等個子 小個子   中等個子 小個子   小個子   小個子   小個子  
+ [697] 高個子   小個子   中等個子 小個子   中等個子 小個子   中等個子 中等個子
+ [705] 小個子   中等個子 小個子   小個子   小個子   小個子   小個子   小個子  
+ [713] 中等個子 小個子   中等個子 中等個子 小個子   小個子   小個子   中等個子
+ [721] 小個子   小個子   中等個子 中等個子 小個子   中等個子 中等個子 小個子  
+ [729] 小個子   中等個子 中等個子 小個子   中等個子 小個子   高個子   中等個子
+ [737] 小個子   小個子   小個子   小個子   小個子   中等個子 中等個子 小個子  
+ [745] 小個子   小個子   中等個子 小個子   中等個子 中等個子 小個子   高個子  
+ [753] 小個子   中等個子 小個子   中等個子 小個子   小個子   小個子   小個子  
+ [761] 中等個子 中等個子 中等個子 小個子   小個子   中等個子 中等個子 小個子  
+ [769] 小個子   小個子   中等個子 小個子   中等個子 中等個子 小個子   小個子  
+ [777] 小個子   小個子   小個子   小個子   小個子   中等個子 中等個子 小個子  
+ [785] 中等個子 小個子   中等個子 高個子   小個子   小個子   中等個子 小個子  
+ [793] 中等個子 小個子   小個子   小個子   小個子   小個子   小個子   高個子  
+ [801] 中等個子 小個子   中等個子 小個子   中等個子 中等個子 小個子   中等個子
+ [809] 小個子   小個子   中等個子 小個子   小個子   中等個子 小個子   高個子  
+ [817] 小個子   小個子   中等個子 小個子   中等個子 中等個子 小個子   中等個子
+ [825] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [833] 小個子   小個子   中等個子 小個子   高個子   小個子   小個子   小個子  
+ [841] 小個子   小個子   小個子   小個子   小個子   中等個子 小個子   中等個子
+ [849] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   中等個子
+ [857] 小個子   中等個子 小個子   小個子   小個子   小個子   小個子   中等個子
+ [865] 中等個子 小個子   小個子   小個子   小個子   小個子   中等個子 小個子  
+ [873] 小個子   小個子   中等個子 中等個子 中等個子 小個子   小個子   小個子  
+ [881] 小個子   高個子   中等個子 中等個子 中等個子 小個子   小個子   小個子  
+ [889] 高個子   小個子   小個子   小個子   中等個子 中等個子 中等個子 中等個子
+ [897] 中等個子 小個子   中等個子 高個子   小個子   小個子   小個子   小個子  
+ [905] 小個子   小個子   小個子   小個子   中等個子 小個子   小個子   小個子  
+ [913] 小個子   小個子   中等個子 中等個子 中等個子 中等個子 小個子   小個子  
+ [921] 小個子   中等個子 小個子   小個子   小個子   小個子   小個子   小個子  
+ [929] 小個子   中等個子 小個子   小個子   中等個子 小個子   小個子   小個子  
+ [937] 小個子   小個子   小個子   中等個子 中等個子 小個子   中等個子 高個子  
+ [945] 中等個子 小個子   中等個子 小個子   中等個子 高個子   小個子   高個子  
+ [953] 小個子   中等個子 高個子   高個子   中等個子 小個子   小個子   小個子  
+ [961] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   小個子  
+ [969] 小個子   中等個子 小個子   中等個子 中等個子 小個子   小個子   小個子  
+ [977] 中等個子 小個子   中等個子 小個子   高個子   小個子   小個子   小個子  
+ [985] 小個子   小個子   小個子   小個子   小個子   小個子   小個子   中等個子
+ [993] 中等個子 小個子   中等個子 中等個子 中等個子 小個子   中等個子 小個子  
+ [ reached getOption(&quot;max.print&quot;) -- omitted 57 entries ]
+Levels: 小個子 中等個子 高個子</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3R1ZGVudCTmlrDouqvpq5jntJrot50gPC0gc3R1ZGVudCTouqvpq5jntJrot51cbmBgYCJ9 -->
+<pre class="r"><code>student$新身高級距 &lt;- student$身高級距</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlOlxuSW4gc3Ryc3BsaXQoY29kZSwgXCJcXG5cIiwgZml4ZWQgPSBUUlVFKSA6XG4gIGlucHV0IHN0cmluZyAxIGlzIGludmFsaWQgaW4gdGhpcyBsb2NhbGVcbiJ9 -->
+<pre><code>Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKHN0dWRlbnQk5paw6Lqr6auY57Sa6LedKVtjKDE6MyldPC1jKFwiKDAsMTYwXVwiKVxubGV2ZWxzKHN0dWRlbnQk5paw6Lqr6auY57Sa6LedKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG5gYGAifQ== -->
+<pre class="r"><code>levels(student$新身高級距)[c(1:3)]&lt;-c(&quot;(0,160]&quot;)
+levels(student$新身高級距)                                                                 </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiKDAsMTYwXVwiICAgXCIoMTYwLDE2NV1cIiBcIigxNjUsMTcwXVwiIFwiKDE3MCwxNzVdXCIgXCIoMTc1LDE4MF1cIiBcIigxODAsMTg1XVwiXG4ifQ== -->
+<pre><code>[1] &quot;(0,160]&quot;   &quot;(160,165]&quot; &quot;(165,170]&quot; &quot;(170,175]&quot; &quot;(175,180]&quot; &quot;(180,185]&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKGNsYXNzU3VydmV5KVxuYGBgIn0= -->
+<pre class="r"><code>dim(classSurvey)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAnY2xhc3NTdXJ2ZXknIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error: object 'classSurvey' not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MoY2xhc3NTdXJ2ZXkk5a246JmfKVxuYGBgIn0= -->
+<pre class="r"><code>class(classSurvey$學號)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAnY2xhc3NTdXJ2ZXknIG5vdCBmb3VuZFxuSW4gYWRkaXRpb246IFdhcm5pbmcgbWVzc2FnZTpcbkluIHN0cnNwbGl0KGNvZGUsIFwiXFxuXCIsIGZpeGVkID0gVFJVRSkgOlxuICBpbnB1dCBzdHJpbmcgMSBpcyBpbnZhbGlkIGluIHRoaXMgbG9jYWxlXG4ifQ== -->
+<pre><code>Error: object 'classSurvey' not found
+In addition: Warning message:
+In strsplit(code, &quot;\n&quot;, fixed = TRUE) :
+  input string 1 is invalid in this locale</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
@@ -190,7 +497,7 @@ $(document).ready(function () {
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMzEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIjIwMTgtMTAtMzEiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpTdHVERiA8LSBkYXRhLmZyYW1lKA0KICBTdHVJRD1jKDEsMiwzLDQsNSksDQogIG5hbWU9Yygi5bCP5piOIiwi5aSn6ZuEIiwi6IOW6JmOIiwi5bCP5pawIiwi5aSn55m9IiksDQogIHNjb3JlPWMoODAsNjAsOTAsNzAsNTApDQogICkNClN0dURGIA0KYGBgDQoNCmBgYHtyfQ0KbmFtZXMoU3R1REYpWzJdIDwtIGMoIuWnk+WQjSIpDQpuYW1lcyhTdHVERikNCmBgYA0KDQpgYGB7cn0NCm5hbWVzKGdzU3VydmV5KQ0KYGBgDQoNCmBgYHtyfQ0KZ3NTdXJ2ZXkkbGlua3MkdHlwZVsxXQ0KYGBgDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkcikNCnN0dWRlbnQgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvc3R1ZGVudC5jc3YiKQ0KbGlicmFyeShkcGx5cikNCmxpYnJhcnkobWFncml0dHIpDQpzdHVkZW50ICU8PiUgbXV0YXRlKA0KICDouqvpq5jntJrot509Y3V0KOi6q+mrmCxjKDAsMTUwLDE1NSwxNjAsMTY1LDE3MCwxNzUsMTgwLDE4NSwyMDApKSkNCmBgYA0KDQpgYGB7cn0NCmxldmVscyhzdHVkZW50JOi6q+mrmOe0mui3nSkgPC1jKCLlsI/lgIvlrZAiLCLlsI/lgIvlrZAiLCLlsI/lgIvlrZAiLCLlsI/lgIvlrZAiLCLlsI/lgIvlrZAiLCLkuK3nrYnlgIvlrZAiLCLkuK3nrYnlgIvlrZAiLCLpq5jlgIvlrZAiLCLpq5jlgIvlrZAiKQ0KbGV2ZWxzKHN0dWRlbnQk6Lqr6auY57Sa6LedKQ0Kc3R1ZGVudCTouqvpq5jntJrot50NCg0KYGBgDQoNCmBgYHtyfQ0Kc3R1ZGVudCTmlrDouqvpq5jntJrot50gPC0gc3R1ZGVudCTouqvpq5jntJrot50NCmxldmVscyhzdHVkZW50JOaWsOi6q+mrmOe0mui3nSlbYygxOjMpXTwtYygiKDAsMTYwXSIpDQpsZXZlbHMoc3R1ZGVudCTmlrDouqvpq5jntJrot50pICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICANCmBgYA0KDQpgYGB7cn0NCmRpbShjbGFzc1N1cnZleSkNCm5yb3coY2xhc3NTdXJ2ZXkpDQpuY29sKGNsYXNzU3VydmV5KQ0KYGBgDQoNCmBgYHtyfQ0KY2xhc3MoY2xhc3NTdXJ2ZXkk5a246JmfKQ0KYXMuY2hhcmFjdGVyKGNsYXNzU3VydmV5JOWtuOiZnykgLT5jbGFzc1N1cnZleSTlrbjomZ8gDQpsaWJyYXJ5KHN0cmluZ3IpDQpjbGFzc1N1cnZleSTlubTntJogPC0gc3RyX3N1YihjbGFzc1N1cnZleSTlrbjomZ8sMiw0KQ0KY2xhc3NTdXJ2ZXkk5bm057SaIDwtIGFzLmZhY3RvcihjbGFzc1N1cnZleSTlubTntJopDQpsZXZlbHMoY2xhc3NTdXJ2ZXkk5bm057SaKSA8LSBjKCLlpKflm5vku6XkuIoiLCLlpKfkuIkiLCLlpKfkuowiLCLlpKfkuIAiKQ0KY2xhc3NTdXJ2ZXkk5bm057SaDQpgYGANCg0KYGBge3J9DQogDQpgYGANCg0KYGBge3J9DQpjbGFzc1N1cnZleVsoY2xhc3NTdXJ2ZXkk5bm057SaID09ICLlpKfkuIAiKSw4XQ0KDQpgYGANCg0KYGBge3J9DQpmcmVzaEluZGljYXRvciA8LSAoY2xhc3NTdXJ2ZXkk5bm057SaPT0i5aSn5LiAIikNCmZyZXNoQWN0aXZpdHkgPC0gY2xhc3NTdXJ2ZXkk5pys5a245pyf55uu5YmN5bey5Y+D5Yqg5LmL6Kqy5aSW5rS75YuVW2ZyZXNoSW5kaWNhdG9yXQ0KbGlicmFyeShzdHJpbmdyKQ0Kc3RyX3NwbGl0X2ZpeGVkKGZyZXNoQWN0aXZpdHksIiwgIixuPTMpIC0+IGFhDQp0YWJsZShhYSkNCmxlbmd0aChmcmVzaEFjdGl2aXR5KQ0KYGBgDQoNCmBgYHtyfQ0KZnJlc2hJbmRpY2F0b3INCmBgYA0KDQpgYGB7cn0NCmZyZXNoQWN0aXZpdHkNCmBgYA0KDQpgYGB7cn0NCmFhDQpgYGANCg0KYGBge3J9DQpiYg0KYGBgDQoNCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4NCg0KV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuDQoNClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4NCg==</div>
 
 
 

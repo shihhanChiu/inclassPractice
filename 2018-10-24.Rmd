@@ -116,6 +116,23 @@ classSurvey$本學期學分數 > 26),3]
 
 ```
 
+```{r}
+library(stringr)
+aa<-(str_sub(classSurvey$居住地行政區,1,3)) #找出住在台北市的人
+classSurvey[aa == "台北市",c("姓名")]
+```
+
+```{r}
+cc <- classSurvey[aa == "台北市",c("姓名")]
+class(cc)
+cc$姓名[3]
+```
+
+```{r}
+bb <- c("a" , "b" ,"c")
+bb[3]
+```
+
 
 ```{r}
 StuDF$StuID
@@ -137,6 +154,16 @@ StuDF[,c("StuID","name")]   ## 無法用$一次取兩個元素
 ```
 
 ```{r}
+c(1:3) # same as c(1,2,3)
+c(5:7) # same as c(5,6,7)
+c(1,5:7,10) #same as c(1,5,6,7,10)
+```
+
+```{r}
+StuDF[c(T,F,F,T,F),]
+```
+
+```{r}
 StuDF[c(1,4),c(2)]
 
 
@@ -150,5 +177,14 @@ StuDF[,c(2)][c(1,4)] #StuDF[,c(2)] -> aa aa[c(1,4)]
 ```
 ```{r}
 StuDF[,c(1,3)][c(1,4),] #[,column 1.3][row 1.4,]
+```
+
+```{r}
+which(StuDF$score >= 80)
+which(StuDF$name == "小新")
+```
+
+```{r}
+
 ```
 

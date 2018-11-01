@@ -72,7 +72,7 @@ filmVotingData$hour
 2.4 使用`table()`統計學生最活躍的填表時間。
 
 ```{r ans24}
-table(`filmVotingData$hour`) -> b
+table(filmVotingData$hour) -> b
 b
 ```
 
