@@ -21,16 +21,15 @@ classData<-gs_read(gsLMSHabit,ws="公告與練習") #access the 1st worksheet
 ```{r ans11}
 as.factor(classData$`公-10-06`) -> a
 levels(a)<-c("沒看公告","有看公告")
-a
+
 ```
 
 ### 1.2 
 選出"有看公告"的classData樣本。
 
 ```{r ans12}
-Viewed <- (a == "有看公告")
-Sample <- classData$`GitHub username`[Viewed]
-Sample
+which(classData$`公-10-06` == 1 )
+classData[c(classData$`公-10-06` == 1),]
 ```
 
 ### 1.3
@@ -41,12 +40,12 @@ Sample
 ```{r ans13}
 as.factor(classData$`練2018-10-17-1`) -> classData$`練2018-10-17-1`
 b <- (classData$`練2018-10-17-1` == 1)
-c <- b[Viewed]
-as.factor(as.numeric(c)) -> c
-levels(c) <- c("有看公告沒記錄","有看公告有記錄")
-table(c)
+c <- (classData$`公-10-06` == 1)
+d <- b[c]
+as.factor(as.numeric(d)) -> d
+levels(d) <- c("有看公告沒記錄","有看公告有記錄")
+table(d)
 41/52 -> ratio
-round(ratio,2) -> ratio
 ratio
 ```
 
@@ -54,10 +53,8 @@ ratio
 在「沒看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans14}
-as.factor(classData$`練2018-10-17-1`) -> classData$`練2018-10-17-1`
-d <- (classData$`練2018-10-17-1` == 0)
-nonViewed <- (a == "沒看公告")
-e <- d[nonViewed]
+d <- [classData$記錄 == "有記錄"]
+ e <- d[nonViewed]
 as.factor(as.numeric(e)) -> e
 levels(e) <- c("沒看公告沒記錄","沒看公告有記錄")
 table(e)
@@ -81,15 +78,15 @@ hwData<-gs_read(gsLMSHabit,ws="作業上傳")
 ```{r ans21}
 as.factor(hwData$Timestamp) -> hwData$Timestamp
 library(lubridate)
-mdy_hms(hwData$Timestamp) -> hwData$Timestamp
-with_tz(hwData$Timestamp,tz = "Asia/Taipei") -> hwData$Timestamp
+mdy_hms(hwData$Timestamp, tz="Asia/Taipei") -> hwData$Timestamp
+
 ```
 
 ### 2.2
 作業繳交期限是"2018-10-24 00:00:00"，請建立一個Date/Time物件名為`deadline`，其值為繳交期限。
 
 ```{r ans22}
-deadline <- ymd_hms("2018-10-24 00:00:00")
+deadline <- ymd_hms("2018-10-24 00:00:00",tz="Asia/Taipei")
 deadline
 ```
 
