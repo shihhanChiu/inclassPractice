@@ -53,12 +53,13 @@ ratio
 在「沒看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans14}
-d <- [classData$記錄 == "有記錄"]
- e <- d[nonViewed]
-as.factor(as.numeric(e)) -> e
-levels(e) <- c("沒看公告沒記錄","沒看公告有記錄")
-table(e)
-16/25 -> ratio1
+e <- (classData$`練2018-10-17-1` == 1)
+f <- (classData$`公-10-06` == 0)
+g <- e[f]
+as.factor(as.numeric(g)) -> g
+levels(g) <- c("沒看公告沒記錄","沒看公告有記錄")
+table(g)
+9/25 -> ratio1
 ratio1
 ```
 
