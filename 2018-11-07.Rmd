@@ -1,0 +1,145 @@
+---
+title: "2018-11-07"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(stringr)
+library(lubridate)
+民國年月<-c("099/01","099/02","099/03")
+
+# 1
+str_c("1",民國年月,"/01")->民國年月
+
+# 2
+lubridate::ymd(民國年月) -> 民國年月
+
+# 3
+民國年月 + years(911)
+```
+
+```{r}
+民國年月<-c("099/01","099/02","099/03")
+
+library(dplyr)
+# 1
+民國年月 %>%  #串接 , x用" . "代替
+  str_c("1", . ,"/01") %>%
+  ymd %>%
+  { . + years(911) }
+```
+
+```{r}
+library(readr)
+collegeData <- read_csv("https://quality.data.gov.tw/dq_download_csv.php?nid=6231&md5_url=dda8fca407131483c1d8cbf3d61cf793")
+```
+
+```{r}
+collegeData$學校名稱 <- as.factor(collegeData$學校名稱)
+collegeData$學校代碼 <- as.factor(collegeData$學校代碼)
+collegeData -> collegeData2
+```
+
+```{r}
+library(dplyr)
+mutate(
+  collegeData,
+  學校代碼1=as.factor(學校代碼),
+  學校名稱1=as.factor(學校名稱)
+  ) -> collegeData2
+```
+
+```{r}
+
+```
+
+```{r}
+library(stringr)
+collegeData %>%
+  mutate(
+    一年級男生=str_replace(一年級男生,",",""),  
+    一年級女生=str_replace(一年級女生,",","")
+  )%>%
+  mutate(
+    一年級男生=as.numeric(一年級男生),
+    一年級女生=as.numeric(一年級女生)
+  ) -> collegeData3 
+```
+
+```{r}
+library(stringr)
+collegeData %>%
+  mutate(#逗號拿掉
+    一年級男生=str_replace(一年級男生,",",""),
+    一年級女生=str_replace(一年級女生,",",""),
+         #數值
+    一年級男生=as.numeric(一年級男生),
+    一年級女生=as.numeric(一年級女生)
+  ) -> collegeData3
+```
+
+```{r}
+#parse_integer(x, <數值替代na轉na> na = c("", "NA"), locale = default_locale())
+
+#parse_double(x, na = c("", "NA"), locale = default_locale())
+
+library(readr)
+cl<-locale(grouping_mark = ",") # 創造cl來描述grouping_mark千分位符號使用","的習慣場景 locale=場景 可多場景
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    一年級男生=parse_number(一年級男生,na = c("-", "NA"),locale=cl),
+    一年級女生=parse_number(一年級女生,na = c("-", "NA"),locale=cl),
+    一年級男生每千人=一年級男生/1000,
+    一年級女生每千人=一年級女生/1000
+  ) -> collegeData4
+
+
+```
+
+```{r}
+collegeData %>%
+  select(一年級男生,一年級女生,二年級男生,
+              二年級女生) -> college1stYearData
+```
+
+```{r}
+collegeData %>%
+  mutate(一年級男生=parse_number(一年級男生,na = c("-", "NA"),locale=cl),
+         一年級女生=parse_number(一年級女生,na = c("-", "NA"),locale=cl),
+         二年級男生=parse_number(二年級男生,na = c("-", "NA"),locale=cl),
+         二年級女生=parse_number(二年級女生,na = c("-", "NA"),locale=cl)
+         ) -> college1stYearData
+```
+
+```{r}
+college1stYearData %>%
+  mutate_all(funs(parse_number(.,locale=cl))) -> college1stYearData
+```
+
+```{r}
+library(readr)
+cl<-locale(grouping_mark = ",") # 創造cl來描述grouping_mark千分位符號使用","的習慣場景 locale=場景 可多場景
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    二年級男生=parse_number(二年級男生,locale=cl),
+    二年級女生=parse_number(二年級女生,locale=cl)
+  ) -> collegeData4
+```
+
+```{r}
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
