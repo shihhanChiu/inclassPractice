@@ -19,8 +19,8 @@ classData<-gs_read(gsLMSHabit,ws="公告與練習") #access the 1st worksheet
 變數「公-10-06」為1代表有看公告，請將classData$`公-10-06`改成factor類型且有看公告的人，他的觀察值為"有看公告"；沒看公告的觀察值為"沒看公告"。
 
 ```{r ans11}
-as.factor(classData$`公-10-06`) -> a
-levels(a)<-c("沒看公告","有看公告")
+as.factor(classData$`公-10-06`) -> classData$`公-10-06`
+levels(classData$`公-10-06`)<-c("沒看公告","有看公告")
 
 ```
 
@@ -28,8 +28,8 @@ levels(a)<-c("沒看公告","有看公告")
 選出"有看公告"的classData樣本。
 
 ```{r ans12}
-which(classData$`公-10-06` == 1 )
-classData[c(classData$`公-10-06` == 1),]
+#which(classData$`公-10-06` == "有看公告" )
+subClassData <- classData[classData$`公-10-06` == 1,]
 ```
 
 ### 1.3
@@ -40,7 +40,7 @@ classData[c(classData$`公-10-06` == 1),]
 ```{r ans13}
 as.factor(classData$`練2018-10-17-1`) -> classData$`練2018-10-17-1`
 b <- (classData$`練2018-10-17-1` == 1)
-c <- (classData$`公-10-06` == 1)
+c <- (classData$`公-10-06` == "有看公告")
 d <- b[c]
 as.factor(as.numeric(d)) -> d
 levels(d) <- c("有看公告沒記錄","有看公告有記錄")
@@ -54,7 +54,7 @@ ratio
 
 ```{r ans14}
 e <- (classData$`練2018-10-17-1` == 1)
-f <- (classData$`公-10-06` == 0)
+f <- (classData$`公-10-06` == "沒看公告")
 g <- e[f]
 as.factor(as.numeric(g)) -> g
 levels(g) <- c("沒看公告沒記錄","沒看公告有記錄")
@@ -77,10 +77,10 @@ hwData<-gs_read(gsLMSHabit,ws="作業上傳")
 ### 2.1
 資料的Timestamp為台灣時間，請將Timestamp變數設定成為Date/Time類型（即POSIXct)且時區是"Asia/Taipei"。（hint: `lubridate::mdy_hms()`）
 ```{r ans21}
-as.factor(hwData$Timestamp) -> hwData$Timestamp
+#as.factor(hwData$Timestamp) -> hwData$Timestamp
 library(lubridate)
 mdy_hms(hwData$Timestamp, tz="Asia/Taipei") -> hwData$Timestamp
-
+#在mdy裡設定台灣時間
 ```
 
 ### 2.2
@@ -95,10 +95,11 @@ deadline
 將`deadline`減去`hwData$Timestap`你會得到一個向量物件，其class為difftime。它的值為兩個Date/Time差了多少秒,但這並不容易理解。使用`difftime()`算出每個作業交件提早了多少**天**, 並存在`hwData$early`裡。
 
 ```{r ans23}
-(deadline - hwData$Timestamp) -> a
-as.numeric(a, units = "days") -> hwData$early
-library(stringr)
-str_c(hwData$early,"天") -> hwData$early
+(deadline - hwData$Timestamp) -> hwData$early
+hwData$early <- difftime(deadline,hwData$Timestamp,units="days")
+#as.numeric(a, units = "days") -> hwData$early
+#library(stringr)
+#str_c(hwData$early,"天") -> hwData$early
 hwData$early
 ```
 
@@ -106,9 +107,9 @@ hwData$early
 利用`round()`將early變數的天數四捨五入到整數。
 
 ```{r ans24}
-str_sub(hwData$early,1,3) -> a
-round(as.numeric(a),0) -> a
-str_c(a,"天") -> hwData$early
+#str_sub(hwData$early,1,3) -> a
+round(as.numeric(hwData$early)) -> hwData$early
+#str_c(a,"天") -> hwData$early
 hwData$early
 ```
 
@@ -116,8 +117,9 @@ hwData$early
 作業1（即作業代碼為"hw1"）準時交的人中，他們的提早天數分佈如何？請使用`table()`呈現。
 
 ```{r ans25}
-b <-(hwData$作業代碼 == "hw1")
-c <- hwData$early[b]
-table(c)
+hwData[(hwData$Timestamp<deadline & hwData$作業代碼 == "hw1"),] -> subData
+#b <-(hwData$作業代碼 == "hw1")
+#c <- hwData$early[b]
+table(subData$early)
 ```
 

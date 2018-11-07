@@ -29,12 +29,12 @@ a
 library(stringr)
 library(lubridate)
 str_c('0',bankdata$年月,'/01')->民國年月日
-ymd(民國年月日)-> 民國年月日
-民國年月日 + years(1911) -> 西元年月日
-as.character(西元年月日)-> 西元年月日
-str_replace(西元年月日,"-","/")->西元年月日
-ymd(西元年月日) -> 西元年月日
-西元年月日
+ymd(民國年月日) + years(1911) -> 西元年月日
+#民國年月日 + years(1911) -> 西元年月日
+#as.character(西元年月日)-> 西元年月日
+#str_replace(西元年月日,"-","/")->西元年月日
+#ymd(西元年月日) -> 西元年月日
+bankdata$年月 <- 西元年月日
 
 ```
 
@@ -47,8 +47,8 @@ Google天災地圖會發佈天災時地資訊，如[潭美颱風(Typhoon Trami)]
 
 ```{r ans2}
 library(lubridate)
-x <- ydm_hm("2018/30/09 00:00", tz = "UTC")
-with_tz(x, tz = "Asia/Taipei") -> x
+#x <- ydm_hm("2018/30/09 00:00")
+with_tz(ydm_hm("2018/30/09 00:00"), tz = "Asia/Taipei") -> x
 x
 ```
 
