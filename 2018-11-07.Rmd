@@ -135,6 +135,9 @@ collegeData %>%
 ```
 
 ```{r}
+library(lubridate)
+dur <- duration(days = 31) #duration
+as.interval(dur, ymd("2009-01-01",tz= "Asia/Taipei"))
 
 ```
 
