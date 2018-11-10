@@ -143,7 +143,9 @@ as.interval(dur, ymd("2009-01-01",tz= "Asia/Taipei"))
 ```
 
 ```{r}
-
+m2 <- cbind(1, 1:4)
+colnames(m2) <- c("x","Y")
+m2
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
