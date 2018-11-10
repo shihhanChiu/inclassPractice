@@ -118,8 +118,9 @@ collegeData %>%
 ```
 
 ```{r}
-college1stYearData %>%
-  mutate_all(funs(parse_number(.,locale=cl))) -> college1stYearData
+library(dplyr)
+iris
+iris %>% mutate_at(vars(matches("Sepal")), log)
 ```
 
 ```{r}
@@ -138,6 +139,10 @@ collegeData %>%
 library(lubridate)
 dur <- duration(days = 31) #duration
 as.interval(dur, ymd("2009-01-01",tz= "Asia/Taipei"))
+
+```
+
+```{r}
 
 ```
 
