@@ -150,8 +150,7 @@ library(stringr)
 colnames(exData[c(4,10,15)]) -> a
 str_locate_all(a,"/")
 str_sub(a,1,2) -> b
-colnames(exData[c(4,10,15)]) <- b
-colnames(exData[c(4,10,15)])
+colnames(exData)[c(4,10,15)] <- b
 exData
 
 
