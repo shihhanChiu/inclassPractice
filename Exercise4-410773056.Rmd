@@ -150,7 +150,8 @@ exData %>%
   mutate_at(
     vars(contains("/")
          ),
-    funs(parse_number(.,na=c("","NA","-"))))%>%
+    funs(parse_number(.,na=c("","NA","-")
+                      )))%>%
       mutate(期間 = str_c(期間,"-01"),期間=ymd(期間)) -> exData
 
 #mutate_at(exData,c(2:19),as.numeric) -> exData
@@ -188,7 +189,7 @@ currencynames <- a[-1]
 currencynames %>% str_locate("/") %>%
   {str_sub(currencynames,1,.[,1]-4)} -> 
   currencyName
-str_sub(currencynames,1,.[,1]-4)
+
 #str_locate_all(a,"/")
 #str_sub(a,1,2) -> b
 #colnames(exData)[c(4,10,15)] <- b
