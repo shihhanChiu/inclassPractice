@@ -1,0 +1,208 @@
+---
+title: "2018-12-05"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+!F+!T+!F
+!(F+!T+!F)
+!(F+!(T+!F))
+
+```
+
+```{r}
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+
+```{r}
+libraryData %>%
+  mutate(
+    學院=as.factor(學院),
+    書籍館藏地=as.factor(書籍館藏地),
+    書籍類別=as.factor(書籍類別),
+    借閱時間=ymd_hms(借閱時間,tz="Asia/Taipei")
+  ) -> libraryData
+
+libraryData %>% mutate_at(
+  vars(學院,書籍館藏地,書籍類別),
+  funs(as.factor(.))
+) %>% (-> college1stYearDataA
+
+college1stYearDataA %>%
+  select(一年級男生,一年級女生)  
+
+#用 mutate at 試試
+```
+
+```{r}
+## 1
+max(libraryData$讀者借閱冊數)-> maxNumber
+min(libraryData$讀者借閱冊數)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber) #paste 一樣功能
+
+
+```
+
+```{r}
+## 2
+max(libraryData$入學年)-> maxNumber
+min(libraryData$入學年)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+
+
+```
+
+```{r}
+## 3
+max(libraryData$書籍上架年月)-> maxNumber
+min(libraryData$書籍上架年月)-> minNumber
+paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+```
+
+```{r}
+minMaxFun <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+} # function(x){一連串程序}
+
+```
+
+
+
+```{r}
+minMaxFun2 <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber) -> result
+return(result) #return 會顯示取到的東西
+}
+```
+
+```{r}
+minMaxFun3 <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+return(maxNumber) #return 會顯示取到的東西
+}
+```
+
+```{r}
+minMaxFun4 <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber) -> result
+return(minNumber) #return 會顯示取到的東西
+}
+```
+
+```{r}
+minMaxFun4 <- function(x){
+  max(x)-> maxNumber
+  print(min(x)-> minNumber) #印出object,不管是否存入
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+return(minNumber) #return 會顯示取到的東西
+}
+```
+
+```{r}
+minMaxFun2(libraryData$讀者借閱冊數) -> a1
+
+minMaxFun3(libraryData$入學年) -> a2
+
+minMaxFun4(libraryData$書籍上架年月) -> a3
+```
+
+```{r}
+not_numeric <- function(x){
+!is.numeric(x) -> result
+  return(result)}
+not_numeric(libraryData$讀者借閱冊數)
+
+```
+#找出屬於'人文學院'的子樣本
+```{r}
+(libraryData$學院=='人文學院') -> logIndex
+libraryData[logIndex,] -> subsample
+```
+## Grouping and summarise group feature
+```{r}
+(libraryData$學院=='社會科學學院') -> logIndex
+libraryData[logIndex,] -> subsample
+```
+
+```{r}
+findMycollege <- function(x){
+  (libraryData$學院 == x) -> logIndex
+  libraryData[logIndex,]-> subsample
+  #取行 
+  
+  return(subsample)
+}
+```
+
+```{r}
+## grouping
+findMycollege('社會科學院') -> sample1
+## group feature summary
+nrow(sample1)
+
+## grouping
+findMycollege('人文學院') -> sample2
+## group feature summary
+nrow(sample2)
+```
+
+```{r}
+libraryData %>% 
+  group_by(學院) %>%
+  summarise(
+    學院借閱冊數=length(學號)
+  )
+
+```
+
+```{r}
+libraryData %>%
+  select(讀者借閱冊數,書籍出版日期) %>%
+  summarise(
+    讀者平均借閱冊數=mean(讀者借閱冊數),
+    最小書籍出版日期=min(書籍出版日期,na.rm=T),
+    最大書籍出版日期=max(書籍出版日期,na.rm=T)
+  )
+```
+
+```{r}
+library(summarytools)
+libraryData %>%
+  select_if(
+    is.numeric
+  ) %>% summarytools::dfSummary() %>% summarytools::view(.)
+```
+
+```{r}
+libraryData[which(libraryData$書籍出版日期 == 1199),] #which 只取 true
+
+(libraryData$書籍出版日期 == 1199) %>%
+  which(.) %>% libraryData[.,]
+```
+
+```{r}
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

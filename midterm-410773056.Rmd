@@ -226,16 +226,21 @@ averageScore <- 男性分數 / 男性
 ## 1.9 團隊活動與學業表現：女性
 請由**hwGradesSubsample**中計算女性「有參與」團隊活動的平均**平均成績**值。(最後一行必需出現此平均值) (hint: 可參考1.7來確認**hwGradesSubsample**有誰有參與團隊活動)
 ```{r ans19}
-團隊活動 <- classSurvey$學號[classSurvey$課外活動 == '團隊活動'] 
-hwGradesSubsample$團隊活動 <- hwGradesSubsample$學號 %in% 團隊活動
-mean(hwGradesSubsample$平均成績[(hwGradesSubsample$女性 == T & hwGradesSubsample$團隊活動 == T)])
 
 
-#classSurvey$學號[classSurvey$課外活動 == '團隊活動'] -> 有團隊的學號
-#hwGradesSubsample$有團活 <- hwGradesSubsample$學號 %in% 有團隊的學號
-#hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T & hwGradesSubsample$有團活==T)] %>%
-  #mean -> meanGradeFemaleWithAct
-#meanGradeFemaleWithAct
+
+
+#團隊活動 <- classSurvey$學號[classSurvey$課外活動 == '團隊活動'] 
+#hwGradesSubsample$團隊活動 <- hwGradesSubsample$學號 %in% 團隊活動
+#mean(hwGradesSubsample$平均成績[(hwGradesSubsample$女性 == T & hwGradesSubsample$團隊活動 == T)])
+
+
+
+classSurvey$學號[classSurvey$課外活動 == '團隊活動'] -> 有團隊的學號
+hwGradesSubsample$有團活 <- hwGradesSubsample$學號 %in% 有團隊的學號
+hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T & hwGradesSubsample$有團活==T)] %>%
+  mean -> meanGradeFemaleWithAct
+meanGradeFemaleWithAct
 ```
 
 > 小知識：資料中女性「沒有參與」團隊活動的成績表現平均高於「有參與」的女性約2.14分；而這差距在男生中只有約1.74分。
@@ -249,9 +254,9 @@ hwSubmit <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/ma
 ## 2.1 class檢查
 請將**hwSubmit**的所有變數調整成正確的class，其中**Timestamp**為UTC時區，請將它轉成台灣Asia/Taipei時區。（最後一行請打hwSubmit, 程式將檢查裡面所有變數的class是否正確。）
 ```{r ans21}
-hwSubmit$Timestamp <- ymd_hms(hwSubmit$Timestamp)
-hwSubmit$Timestamp <- with_tz(hwSubmit$Timestamp,tz = 'Asia/Taipei')
-hwSubmit$學號 <- as.character(hwSubmit$學號)
+hwSubmit$Timestamp <- ymd_hms(hwSubmit$Timestamp)#UTC的秒數
+hwSubmit$Timestamp <- with_tz(hwSubmit$Timestamp,tz = 'Asia/Taipei') #轉成當地時區的時間
+hwSubmit$學號 <- as.character(hwSubmit$學號)                         #不會改變秒數
 hwSubmit
 
 #hwSubmit %>% 
