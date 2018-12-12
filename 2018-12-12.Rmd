@@ -32,13 +32,7 @@ libraryData %>%
     借閱時間=ymd_hms(借閱時間,tz="Asia/Taipei")
   ) -> libraryData
 
-libraryData %>% mutate_at(
-  vars(學院,書籍館藏地,書籍類別),
-  funs(as.factor(.))
-) %>% (-> college1stYearDataA
 
-college1stYearDataA %>%
-  select(一年級男生,一年級女生)  
 
 #用 mutate at 試試
 ```
@@ -200,6 +194,158 @@ libraryData[which(libraryData$書籍出版日期 == 1199),] #which 只取 true
 ```{r}
 library(readr)
 transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcript100_102.csv")
+```
+
+```{r}
+#storageLocations <- levels(libraryData$書籍館藏地) 
+libraryData$書籍館藏地 %>% as.factor %>% levels -> storageLocations 
+storageLocations
+```
+
+```{r}
+i<-1
+# 1 第i個館藏地的值是什麼？
+storageLocation_i <- storageLocations[i] 
+# 2 如何選出符合i館藏地要求的資料？
+numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+subsample_i <- libraryData[numericalIndexForSubsample,]
+# 3 選出上述的子樣本後要如何算出borrowCount_i
+borrowCount_i <- nrow(subsample_i)
+```
+```{r}
+# 0
+allBorrowCount <- vector("numeric",18) #每一格是numeric,總共18格
+for(i in c(1:18)){
+  # 1
+  storageLocation_i <- storageLocations[i] 
+  # 2
+  numericalIndexForSubsample<-which(libraryData$書籍館藏地==storageLocation_i)
+  subsample_i <- libraryData[numericalIndexForSubsample,]
+  # 3
+  borrowCount_i <- nrow(subsample_i)
+  # 4
+  allBorrowCount[[i]]<-borrowCount_i #兩個中括號 有指定位置作用
+  }
+  
+```
+
+```{r}
+libraryData$學院 %>% unique -> collegeList
+#libraryData$學院 <- as.factor(libraryData$學院)
+#collegeList <- levels(libraryData$學院)
+collegeList
+
+#箱子沒有下標_i，不是跟著 i 走
+allBorrowCount1 <- vector("numeric",length(collegeList)) #創造一個字串向量(vector),(數值,有6個)
+#for(i in c()){} 迴圈 c()是範圍 {}放進程式
+for(i in c(1:length(collegeList))){
+  collegeList_i <- collegeList[i] #取出collegeList第i個資料
+  numericalIndexForSubsample<-which(libraryData$學院==collegeList_i)
+  #找出librarydata裡的資料[欄位數字]是符合collegelist第i個資料
+  collegeList_i <- libraryData[numericalIndexForSubsample,]
+  #取出librarydata裡符合collegelist第i個資料的欄位
+  borrowCount_i <- nrow(collegeList_i)
+  #計算欄位 = 借書量
+  allBorrowCount1[[i]] <- borrowCount_i
+  #存入箱子裡的指定位置
+}
+allBorrowCount1
+
+```
+
+```{r}
+libraryData$學號 <- as.factor(libraryData$學號)
+studId <- levels(libraryData$學號)
+
+allBorrowCount2 <- vector("numeric",length(studId))
+
+for(i in seq_along(studId)){
+  studId_i <- studId[i] 
+  numericalIndexForSubsample<-which(libraryData$學號==studId_i)
+  studId_i <- libraryData[numericalIndexForSubsample,]
+  borrowCount_i <- length(studId_i$學號)
+  allBorrowCount2[[i]] <- borrowCount_i
+}
+
+allBorrowCount2
+
+```
+
+```{r}
+libraryData %>%
+  group_by(學院,入學年) %>%
+  summarise(
+    borrowCount=length(學號)
+  ) %>%
+ungroup -> result2
+result2
+```
+
+```{r}
+libraryData %>%
+  mutate(學系 = str_sub(學號,5,6)) -> libraryData
+
+libraryData %>% filter(入學年 == 102)
+```
+
+```{r}
+libraryData %>%
+  group_by(學院,入學年) %>%
+  summarise(
+    borrowCount=length(學號)
+  ) -> result2
+result2
+
+#0 container
+
+for(i in seq_along(College)){
+  for(j in seq_along(EntranceYear)){
+    #1
+    
+    #2
+    
+    #3
+    
+    #4
+    
+    
+  }
+  
+  
+}
+ 
+
+
+
+    
+
+```
+
+```{r}
+libraryData$借閱時間 <- ymd_hms(libraryData$借閱時間,tz= 'Asia/Taipei')
+libraryData %>% 
+  group_by(學號) %>%
+  summarise(
+    timeEarly = min(借閱時間)
+    ) %>%
+  ungroup -> result3
+result3
+
+
+
+
+
+libraryData %>%
+ mutate(
+      借閱時間=ymd_hms(借閱時間,tz="Asia/Taipei")
+  ) %>%
+  group_by(學號) %>%
+  summarise(
+    第一次借書=min(借閱時間)
+  ) %>%
+  ungroup -> result3
+result3
+```
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
