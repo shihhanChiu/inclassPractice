@@ -143,6 +143,27 @@ subsample$科目名稱 %>%
   
   
 ```{r ans17}
+classListDONE <- function(X){
+ a <- which(transcriptData$科目名稱 == X)
+classList <- transcriptData[a,]
+classList$系別 <- str_sub(classList$學號,5,6)
+departmentList <- classList$系別 %>% as.factor %>% unique
+}  
+
+
+shannon <- function(x){
+  studNumAll <- vector("numeric",length(x))
+  for(i in c(1:length(x))){
+  x_i <- x[i]
+  numericalIndexForSubsample <- which(classList$系別==x_i)
+  subsample_i <- classList[numericalIndexForSubsample,]
+  studnum_i <- nrow(subsample_i)
+  studNumAll[[i]] <- studnum_i
+  }
+  studNumAll <- studNumAll/sum(studNumAll)
+  -sum(studNumAll*log(studNumAll))
+}
+
 
 ```
 
@@ -151,7 +172,25 @@ subsample$科目名稱 %>%
 
 請選出104學年第1學期有修通識科目ZT13的學生系別，再透過先前創造的`shannon()`來計算該課程的學生系別背景多樣性指標值（最後一行請讓螢幕出現此值）。
 ```{r ans18}
-```
+a <- which(transcriptData$學年 == 104 & transcriptData$學期 == 1 & transcriptData$科目名稱 == 'ZT13')
+classList <- transcriptData[a,]
+classList$系別 <- str_sub(classList$學號,5,6)
+classList$系別 %>% as.factor %>% unique -> departmentList1
 
+shannon <- function(x){
+  studNumAll <- vector("numeric",length(x))
+  for(i in c(1:length(x))){
+  x_i <- x[i]
+  numericalIndexForSubsample <- which(classList$系別==x_i)
+  subsample_i <- classList[numericalIndexForSubsample,]
+  studnum_i <- nrow(subsample_i)
+  studNumAll[[i]] <- studnum_i
+  }
+  studNumAll <- studNumAll/sum(studNumAll)
+  -sum(studNumAll*log(studNumAll))
+}
+
+shannon(departmentList1)
+```
 
 > Shannon index值越高表示學生系別背景越多樣化。
