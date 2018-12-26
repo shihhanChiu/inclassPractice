@@ -40,8 +40,8 @@ classSurvey %>%
   mutate(
     性別 = as.factor(性別),
     入學年 = str_sub(學號,2,4),
-    團隊活動 = (課外活動 == "團隊活動")
-  ) -> classSurvey
+    團隊活動 = str_detect(課外活動,"團隊活動")  #str_detect(從哪裡找 , 要找甚麼)
+) -> classSurvey
 ```
 
 
