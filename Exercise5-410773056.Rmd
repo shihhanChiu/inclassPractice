@@ -27,6 +27,10 @@ transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-d
                     學期成績="n"
                   ))
 ```
+```{r}
+str_split_fixed(transcriptData$上課時間及教室,' ',n=2) -> find1
+str_rep
+```
 
 此資料為台北大學100-102學年入學學生之去識別化成績資料（入學年為資料中的**學屆**欄位）。
 
@@ -34,7 +38,8 @@ transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-d
 取出學號edfeQ7fb8的子樣本：
 
 ```{r ans11}
-subsample <- transcriptData [transcriptData$學號 == 'edfeQ7fb8',]
+subsample <- transcriptData [transcriptData$學號 == 'edfeQ7fb8',]# %>% filter(學號 == '') -> subsample
+
 ```
 
 ## 1.2 總學分數
@@ -51,7 +56,7 @@ subsample$學期成績 >= 60 -> subsample$及格 # 1
 subsample %>%
   mutate(
     及格 = 學期成績 >= 60  )%>%
-  summarise(
+  summarise( #新的data frame
     總修習學分數=sum(學分數),
     總實得學分數=sum(subsample$學分數[subsample$及格])
   ) -> result
@@ -72,7 +77,7 @@ subsample %>%
   summarise(
     學號= 學號[1],
     總修習學分數=sum(學分數),
-    總實得學分數=sum(subsample$學分數[subsample$及格]),
+    總實得學分數=sum(subsample$學分數[subsample$及格])
     
   ) -> result1
 result1
@@ -92,9 +97,40 @@ totalCredits <- function(x){
     summarise(
       學號 = 學號 [1],
       總修習學分數=sum(學分數),
-      總實得學分數=sum(學分數[subsample$及格]))
+      總實得學分數=sum(學分數[subsample$及格])) ->  finalresult
+  return(finalresult)
 }
 totalCredits("edfeQ7fb8")
+
+allStudentCredits <- vector('list',length(allStudentID))
+for (i in seq_along(allStudentID)){
+  studentID_i <- allStudentID[i]
+studentID_i %>% totalCredits
+}
+
+map(x,function(x[i]))
+map(c(1,2,...,2083),function(i))
+
+totalCreditsOfStudent_i <- function(i){
+  allStudentID[i] %>% totalCredits
+}
+
+answerlist <- map(seq_along(allStudentID),totalCreditsOfStudent_i)
+
+map(allStudentID,totalCredits) -> answerlist
+  
+library(codetools)
+findGlobals(totalCredits)
+
+
+
+```
+
+```{r}
+examplefun <- function(a,b,c){
+  a + b + c
+}
+examplefun(1,2,3)
 ```
 
 
@@ -117,6 +153,10 @@ transcriptData %>%
 filteredLogiIndex <- (transcriptData$學年 == 100 & transcriptData$學期 == 1 & transcriptData$`必選修類別（必∕選∕通）`== '通 ' )
 
 filteredLogiIndex
+```
+
+```{r}
+
 ```
 
 ## 1.7 課堂學生系別背景多樣化
