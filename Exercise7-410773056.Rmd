@@ -50,7 +50,7 @@ length(numOfStudent)
 transcriptData %>%
   group_by(學號,學年,學系,學屆)%>%
   summarise(
-    學年平均成績 = sum(學期成績) / n()
+    學年平均成績 = sum(學期成績*學分數) / sum(學分數)
   ) ->gradeEachYear
 
 gradeEachYear
@@ -63,9 +63,11 @@ gradeEachYear
 
 ```{r ans13}
 gradeEachYear %>% 
+  group_by(學系,學屆)%>%
   mutate(
-    學年PR = 
+    學年PR =percent_rank(學年平均成績)*100
   )
+  
 
 ```
 
@@ -74,13 +76,18 @@ gradeEachYear %>%
 請自transcriptData留下有四年或以上且有完整8學期或以上的學生之成績資料，接著只留下他們前8個學期成績，請稱此篩選後的資料為filteredTranscriptData。接著用filteredTranscriptData來計算這些學生的四年平均總成績並存在新創的grade4Years的data frame中的**學屆平均成績**變數中；此資料請保留學號、學系、學屆，且一個學號只有「一筆」資料。接著再計算各自在班上的學屆PR，且亦存在grade4Years新創的**學屆PR**變數中。（最後一行請打grade4Years供改題檢查上述兩變數的正確性。）
 
 ```{r ans14}
-transcriptData %>%
-  group_by(學號,學年,學期,學系,學屆)%>%
-  summarise(
-    學期平均成績 = sum(學期成績) / n()
-  ) ->gradeEachYear1
-  
-gradeEachYear1 %>% filter(學屆 == 100,學年 == 
+transcriptData$學年學期 <- str_c(transcriptData$學年,transcriptData$學期)
+subsample <- transcriptData[,c(10,11)]
+subsample <- unique(subsample)
+subsample %>%
+  group_by(學號)%>%
+  mutate(
+    學年學期 = n()
+  ) %>% unique -> subsample
+
+studentID <- subsample[(subsample$學年學期 <= 8),][,1]
+
+
 ```
 
 ### 1.5 通識與PR
