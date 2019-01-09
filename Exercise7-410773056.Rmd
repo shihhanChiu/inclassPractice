@@ -48,12 +48,18 @@ length(numOfStudent)
 
 
 transcriptData %>%
-  group_by(學號,學年,學系,學屆)%>%
+  group_by(學號,學年)%>%
   summarise(
+    學系 = 學系[1],
+    學屆 = 學屆[1],
     學年平均成績 = sum(學期成績*學分數) / sum(學分數)
-  ) ->gradeEachYear
-
+  )%>% ungroup ->gradeEachYear
 gradeEachYear
+
+
+```
+
+```{r}
 
 ```
 
@@ -68,7 +74,11 @@ gradeEachYear %>%
     學年PR =percent_rank(學年平均成績)*100
   )
   
-
+gradeEachYear %>% 
+  group_by(學屆,學系,學年)%>%
+  mutate(
+    學年PR =percent_rank(學年平均成績)*100
+  )%>% ungroup -> gradeEachYear
 ```
 
 
@@ -89,17 +99,20 @@ transcriptData %>%
   group_by(學號)%>%
   mutate(
     第幾學期 = semesterNumber(學年學期)
-    ) -> transcriptDataWithSemesterCounts
+    ) -> transcriptDataWithSemesterCounts#每個學期是第幾學期
 transcriptDataWithSemesterCounts %>% 
   group_by(學號)%>%
-  filter(max(第幾學期) >= 8) -> subsample1
-subsample1 %>%
-  filter(第幾學期 %>% between(1,8)) -> filteredTranscriptData
-filteredTranscriptData%>%
-  group_by(學號,學系,學屆) %>%
+  mutate(
+    最大學期 = max(第幾學期))%>%
+  ungroup%>%
+  filter(最大學期 >= 8,第幾學期 <= 8)->filteredTranscriptData
+filteredTranscriptData %>%
+  group_by(學號) %>%
   summarise(
-    學屆平均成績 = sum(學期成績*學分數) / sum(學分數),
-) -> grade4Years
+    學系 = 學系[1],
+    學屆 = 學屆[1],
+    學屆平均成績 = sum(學期成績*學分數) / sum(學分數)
+)%>% ungroup -> grade4Years
 grade4Years %>%
   group_by(學系,學屆) %>%
   mutate(
@@ -114,13 +127,40 @@ grade4Years
 學校近期限制通識每班平均成績在75-85間，原因之一是有不少通識涼課被拿來衝高成績用，但它會影響班排嗎？請計算不含通識成績的學屆PR並存在前一題grade4Years的**學屆PR不含通識**裡。
 
 ```{r ans15}
-
+filteredTranscriptData %>%
+  filter(`必選修類別（必∕選∕通）`!="通" )%>%
+  group_by(學號)%>%
+  summarise(
+    學系 = 學系[1],
+    學屆 = 學屆[1],
+    學屆平均成績不含通識=sum(學期成績*學分數)/sum(學分數)
+  )%>% ungroup -> grade4YearsNoGE
+grade4YearsNoGE %>%
+  group_by(學系,學屆)%>%
+  mutate(
+    學屆PR不含通識 = percent_rank(學屆平均成績不含通識)*100
+  ) -> grade4YearsNoGE
+grade4Years %>%
+  left_join(
+    grade4YearsNoGE,
+    by = c('學號','學系','學屆')
+  ) -> grade4Years
+grade4Years
 ```
 
 ### 1.6 各系PR敏感度
 由grade4Years，我們可以去計算各系PR受通識影響的程度。定義PR差異為：「含通識學屆PR」 減去「不含通識學屆PR」的絕對值（使用`ab s()`計算絕對值），如果通識不影響班排，此值要很接近0。請算出各學系值的中位數。（答案請存在一個名為PRdiffEachDepartment的data frame中，其中變數**學系**為學系，而**PR差異中位數**為對應學系的上述計算值）
 
 ```{r ans16}
+grade4Years %>%
+  mutate(
+    PR差異abs=abs(學屆PR-學屆PR不含通識)
+  )%>%
+  group_by(學系)%>%
+  summarise(
+    PR差異中位數 = median(PR差異abs)
+  ) -> PRdiffEachDepartment
+PRdiffEachDepartment
 ```
 
 > 此結果是以四年的平均來看故差異不大，原因之一是通識佔畢業學分很少比例。同學有空時可以想一下，要怎麼衡量通識課對PR的影響比較合理？或更週道。
