@@ -184,16 +184,35 @@ exData1
 (hint: `colnames()`支援generic replacement; `str_locate()`可找出元素中某個符號的位置;`str_sub()`可取出所要字元)
 ```{r ans33}
 library(stringr)
-colnames(exData1) -> a
-currencynames <- a[-1]
-currencynames %>% str_locate("/") %>%
-  {str_sub(currencynames,1,.[,1]-4)} -> 
-  currencyName
+colnames(exData1) -> cNames 
+cNames 
 
-#str_locate_all(a,"/")
-#str_sub(a,1,2) -> b
-#colnames(exData)[c(4,10,15)] <- b
-#exData
 
 
 ```
+
+```{r}
+
+
+
+
+
+```
+
+```{r}
+currencyName <- cNames[-1]
+currencyName
+```
+
+```{r}
+currencyName %>% str_locate("/") %>%
+{str_sub(currencyName,1,.[,1]-4)}-> currencyName
+currencyName
+```
+
+```{r}
+colnames(exData1)[-1]<-currencyName
+exData1
+
+```
+
